@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Anomaly — Reddit Games Pipeline Pitch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2302060a'/%3E%3Ctext x='16' y='23' font-size='22' text-anchor='middle' fill='%2319e6c4' font-family='monospace'%3EA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Saira:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Chakra+Petch:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;500;600&family=VT323&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="auction.css">
+<link rel="stylesheet" href="post.css">
+<link rel="stylesheet" href="mobile.css">
+<link rel="stylesheet" href="mobile-auction.css">
+
+<style>
+/* ────────────────────────────────────────────────
+   Anomaly Studio Pitch — custom additions
+   ──────────────────────────────────────────────── */
+
+.pitch-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.pitch-hero-logo {
+  font-family: var(--f-head);
+  font-weight: 900;
+  font-size: 140px;
+  letter-spacing: 0.18em;
+  color: var(--c-ink);
+  text-shadow:
+    0 0 8px #fff,
+    0 0 24px var(--c-left),
+    0 0 48px var(--c-left);
+  line-height: 0.95;
+  margin-bottom: 20px;
+}
+
+.pitch-hero-sub {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: 32px;
+  letter-spacing: 0.32em;
+  color: var(--c-ink-dim);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.pitch-hero-cta {
+  appearance: none;
+  border: 2px solid var(--c-left);
+  background: rgba(25, 230, 196, 0.15);
+  color: var(--c-left);
+  font: 800 20px/1 var(--f-head);
+  letter-spacing: 0.18em;
+  padding: 16px 48px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 0 24px rgba(25, 230, 196, 0.3);
+  transition: all 200ms ease;
+}
+
+.pitch-hero-cta:hover {
+  background: var(--c-left);
+  color: #02060a;
+  box-shadow: 0 0 40px rgba(25, 230, 196, 0.6);
+}
+
+/* Pitch details grid */
+.pitch-details {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-rows: 100px 1fr 80px;
+  gap: 0;
+  padding: 40px 60px;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(25, 230, 196, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgba(255, 45, 111, 0.06) 0%, transparent 65%),
+    linear-gradient(180deg, rgba(2, 6, 10, 0.94) 0%, rgba(2, 6, 10, 0.98) 100%);
+  font-family: var(--f-body);
+  pointer-events: auto;
+}
+
+.pitch-details::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,0.015) 3px 4px);
+  z-index: 0;
+}
+
+.pitch-details > * { position: relative; z-index: 1; }
+
+.pitch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.pitch-back-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(2, 6, 10, 0.6);
+  color: var(--c-ink);
+  font: 800 14px/1 var(--f-head);
+  letter-spacing: 0.22em;
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.pitch-back-btn:hover { border-color: var(--c-left); color: var(--c-left); }
+
+.pitch-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.pitch-title-big {
+  font-family: var(--f-head);
+  font-weight: 900;
+  font-size: 36px;
+  letter-spacing: 0.32em;
+  color: var(--c-ink);
+  text-shadow: 0 0 18px var(--c-left);
+  line-height: 1;
+}
+
+.pitch-title-sub {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--c-left);
+  text-shadow: 0 0 8px var(--c-left);
+}
+
+.pitch-content {
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.pitch-content::-webkit-scrollbar { width: 6px; }
+.pitch-content::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.18); }
+
+.pitch-card {
+  background: linear-gradient(180deg, rgba(2, 6, 10, 0.92) 0%, rgba(2, 6, 10, 0.6) 100%);
+  border: 1px solid rgba(25, 230, 196, 0.3);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 0 28px rgba(25, 230, 196, 0.15);
+}
+
+.pitch-card-title {
+  font-family: var(--f-head);
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 0.12em;
+  color: var(--c-left);
+  text-shadow: 0 0 12px var(--c-left);
+}
+
+.pitch-card-body {
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--c-ink);
+}
+
+.pitch-card-body strong {
+  color: var(--c-left);
+  font-weight: 600;
+}
+
+.pitch-card-body em {
+  color: var(--c-ink-dim);
+  font-style: italic;
+}
+
+.pitch-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 0 16px;
+  border-top: 1px solid rgba(25, 230, 196, 0.2);
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--c-ink-dim);
+}
+
+/* Animations */
+[data-state="pitch-hero"] .pitch-hero {
+  animation: pitchHeroIn 600ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+[data-state="pitch-details"] .pitch-details {
+  animation: pitchDetailsIn 500ms ease both;
+}
+
+@keyframes pitchHeroIn {
+  from { opacity: 0; transform: scale(0.92) translateY(20px); filter: blur(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+@keyframes pitchDetailsIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="image-slot.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="auction.jsx"></script>
+<script type="text/babel" src="post.jsx"></script>
+<script type="text/babel" src="pitch-app.jsx"></script>
+</body>
+</html>
