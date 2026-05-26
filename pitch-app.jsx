@@ -205,15 +205,6 @@ function VisionPage({ onBack }) {
               <strong style={{ color: "var(--c-ink)" }}>Time-to-traction is collapsed:</strong> <span style={{ color: "var(--c-ink)" }}>On mobile, a new title typically needs $100K+ in UA to reach 50K MAU. On Reddit, Designer Eye reached 4.7K WAU in 57 days with no marketing. MiniGawf hit 49K WAU in 68 days. The dev cost is the only real cost.</span>
             </div>
           </div>
-
-          <div className="pitch-card">
-            <div className="pitch-card-title">🚀 THE STRATEGY</div>
-            <div className="pitch-card-body">
-              Build 2-3 flagship games that prove the model. Create subreddit leagues and community tournaments. Demonstrate viral potential.
-              <br /><br />
-              Once proven, license the platform to other studios. Become the "Roblox for Reddit."
-            </div>
-          </div>
         </div>
       </div>
 
@@ -540,31 +531,6 @@ function LivingEconomyPage({ onBack }) {
                 display: "block",
               }}
             />
-          </div>
-
-          {/* Link to Matchmaking VS */}
-          <div style={{
-            textAlign: "center",
-            marginTop: "12px",
-          }}>
-            <a href="Matchmaking VS.html" style={{
-              color: "var(--c-left)",
-              textDecoration: "none",
-              fontSize: "12px",
-              letterSpacing: "0.1em",
-              fontWeight: "700",
-              border: "1px solid var(--c-left)",
-              padding: "8px 16px",
-              borderRadius: "4px",
-              display: "inline-block",
-              transition: "all 0.2s",
-            }} onMouseEnter={(e) => {
-              e.target.style.background = "rgba(25, 230, 196, 0.1)";
-            }} onMouseLeave={(e) => {
-              e.target.style.background = "transparent";
-            }}>
-              LAUNCH MATCHMAKING →
-            </a>
           </div>
         </div>
 
