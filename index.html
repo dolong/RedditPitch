@@ -232,6 +232,79 @@
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ────────────────────────────────────────────────
+   Responsive — pitch screens on the mobile shell
+   (body.is-mobile is set by ScaledStage below 900px
+   or in portrait, when the 1920×1080 stage is dropped)
+   ──────────────────────────────────────────────── */
+body.is-mobile .pitch-hero,
+body.is-mobile .pitch-details {
+  position: relative;
+  inset: auto;
+  height: auto;
+  min-height: 100vh;
+}
+
+/* Hero splash */
+body.is-mobile .pitch-hero { padding: 24px; }
+body.is-mobile .pitch-hero-logo {
+  font-size: clamp(52px, 17vw, 96px);
+  letter-spacing: 0.1em;
+}
+body.is-mobile .pitch-hero-sub {
+  font-size: clamp(13px, 4vw, 22px);
+  letter-spacing: 0.16em;
+  margin-bottom: 28px;
+}
+body.is-mobile .pitch-hero-cta { font-size: 15px; padding: 13px 30px; }
+
+/* Detail / sub-pages: flow vertically, single column */
+body.is-mobile .pitch-details {
+  grid-template-rows: auto auto auto;
+  padding: 20px 16px 28px;
+  gap: 18px;
+}
+body.is-mobile .pitch-content {
+  grid-template-columns: 1fr !important;
+  overflow: visible;
+  min-height: 0;
+}
+body.is-mobile .pitch-content > div[style*="grid-template-columns"],
+body.is-mobile .pitch-content > div[style*="gridTemplateColumns"] {
+  grid-template-columns: 1fr !important;
+}
+
+/* Header: let it wrap, drop the centering spacer, shrink the title */
+body.is-mobile .pitch-header { flex-wrap: wrap; gap: 12px; }
+body.is-mobile .pitch-header > div:empty { display: none; }
+body.is-mobile .pitch-title { align-items: flex-start; flex-basis: 100%; }
+body.is-mobile .pitch-title-big { font-size: 24px; letter-spacing: 0.16em; }
+
+/* Cards */
+body.is-mobile .pitch-card { padding: 18px; }
+body.is-mobile .pitch-card-title { font-size: 21px; }
+body.is-mobile .pitch-card-body { font-size: 15px; }
+
+/* Media never overflows its column */
+body.is-mobile .pitch-content img,
+body.is-mobile .pitch-content video { max-width: 100%; height: auto; }
+
+/* Footer stacks */
+body.is-mobile .pitch-footer {
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+  font-size: 10px;
+  padding-top: 14px;
+}
+
+/* Phones: tighten further */
+@media (max-width: 480px) {
+  body.is-mobile .pitch-card { padding: 14px; }
+  body.is-mobile .pitch-card-title { font-size: 19px; }
+  body.is-mobile .pitch-details { padding: 16px 12px 24px; }
+}
 </style>
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
