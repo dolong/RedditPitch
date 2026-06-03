@@ -1147,19 +1147,30 @@ function CoreLoopPage({ onBack, onNext }) {
               border: "1px solid rgba(25, 230, 196, 0.2)",
               background: "#02060a",
             }}>
-              <video
-                src="assets/MBAClip.mov"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="none"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                }}
-              />
+              {/* Crop 20% off the left and right of the source video (640x360 -> 384x360). */}
+              <div style={{
+                position: "relative",
+                width: "100%",
+                aspectRatio: "384 / 360",
+                overflow: "hidden",
+              }}>
+                <video
+                  src="assets/MBAClip.mov"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="none"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: "-33.3333%",
+                    width: "166.6667%",
+                    height: "100%",
+                    display: "block",
+                  }}
+                />
+              </div>
               <div style={{
                 padding: "8px 12px",
                 fontFamily: "var(--f-mono)",

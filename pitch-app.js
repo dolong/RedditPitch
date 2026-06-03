@@ -411,6 +411,11 @@ function CoreLoopPage({ onBack, onNext }) {
     overflow: "hidden",
     border: "1px solid rgba(25, 230, 196, 0.2)",
     background: "#02060a"
+  } }, /* @__PURE__ */ React.createElement("div", { style: {
+    position: "relative",
+    width: "100%",
+    aspectRatio: "384 / 360",
+    overflow: "hidden"
   } }, /* @__PURE__ */ React.createElement(
     "video",
     {
@@ -421,12 +426,15 @@ function CoreLoopPage({ onBack, onNext }) {
       playsInline: true,
       preload: "none",
       style: {
-        width: "100%",
-        height: "auto",
+        position: "absolute",
+        top: 0,
+        left: "-33.3333%",
+        width: "166.6667%",
+        height: "100%",
         display: "block"
       }
     }
-  ), /* @__PURE__ */ React.createElement("div", { style: {
+  )), /* @__PURE__ */ React.createElement("div", { style: {
     padding: "8px 12px",
     fontFamily: "var(--f-mono)",
     fontSize: "11px",
