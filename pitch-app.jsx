@@ -168,11 +168,17 @@ function VisionPage({ onBack }) {
           <div className="pitch-card">
             <div className="pitch-card-title">⚡ THE OPPORTUNITY</div>
             <div className="pitch-card-body">
-              <strong style={{ color: "var(--c-ink)" }}>Reddit just became a games platform — and nobody noticed yet.</strong>
+              <strong style={{ color: "var(--c-ink)" }}>Reddit has quietly become a native games platform. </strong>
+                Devvit lets developers build interactive games that run directly inside Reddit posts, with Reddit-native identity, 
+                distribution, payments, and community mechanics.
               <br /><br />
               <span style={{ color: "var(--c-ink)" }}>
                 <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>48</span> tracked native games. <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>1.4M</span> weekly active users. <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>532K</span> weekly contributions. A solo developer just hit <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>414,000</span> weekly players in 8 months — without spending a dollar on marketing. The average game on the platform converts <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>38%</span> of its players into active contributors every week, four to eight times higher than mobile.
               </span>
+              <a href="https://reddit.poweredbynova.ai" target="_blank" rel="noopener noreferrer" 
+              style={{ color: "var(--c-left)", fontWeight: "600", marginLeft: "4px" }}>
+                See our Reddit Games Dashboard, tracking the entire ecosystem in real time
+              </a>
               <br /><br />
               <strong style={{ color: "var(--c-ink)" }}>The infrastructure is already there:</strong> <span style={{ color: "var(--c-ink)" }}>420M monthly Redditors. A developer platform (Devvit) that runs code natively inside posts. Identity, payments, and distribution built in. Zero app store friction.</span>
               <br /><br />
@@ -187,7 +193,9 @@ function VisionPage({ onBack }) {
               <br /><br />
               <strong>Don't Die</strong> — Arcade roguelike. Real-time survival gameplay, leaderboards, seasonal runs.
               <br /><br />
-              Both designed to be natively shareable, virally engaging, and monetizable through Reddit's existing systems.
+              <strong>Scoop City</strong> — Ice Cream Shop Sim. Time management meets Reddit virality. Create and share your wackiest sundaes. Real life geo features resembling Pokemon Go.
+              <br /><br />
+              Designed to be natively shareable, virally engaging, and monetizable through Reddit's existing systems.
             </div>
           </div>
 
@@ -512,9 +520,12 @@ function AIDifferencePage({ onBack }) {
         <div className="pitch-card">
           <div className="pitch-card-title">🤖 AI AGENTS EMBEDDED INTO THE REDDIT ECOSYSTEM</div>
           <div className="pitch-card-body">
-            <strong style={{ color: "var(--c-ink)" }}>Most studios bolt AI on as a feature. We build agents that live inside Reddit itself</strong> <span style={{ color: "var(--c-ink)" }}>— autonomous participants embedded directly in the feed, the comments, and the game economy.</span>
+            <strong style={{ color: "var(--c-ink)" }}>Most studios bolt AI on as a feature. 
+              Clearly labeled AI opponents and game agents keep worlds active from day one. They can generate daily challenges, fill matchmaking queues, participate in in-game auctions, 
+              and create replayable content loops — without pretending to be human users or manipulating Reddit votes.</strong> <span style={{ color: "var(--c-ink)" }}>— autonomous participants embedded directly in the feed, the comments, and the game economy.</span>
             <br /><br />
-            <span style={{ color: "var(--c-ink)" }}>These agents don't just play our games. They post, comment, bid, scout, and react like real Redditors — seeding activity, filling matchmaking, and keeping every community alive from day one.</span>
+            <span style={{ color: "var(--c-ink)" }}>
+              Create content, posts, content — seeding activity, filling matchmaking, and keeping every community alive from day one.</span>
             <br /><br />
             <strong style={{ color: "var(--c-ink)" }}>The result:</strong> <span style={{ color: "var(--c-ink)" }}>a game world that never feels empty, and a content engine that runs itself. Our AI difference isn't a smarter NPC — it's an always-on population native to the platform.</span>
           </div>
@@ -900,51 +911,31 @@ function MonetizationPage({ onBack }) {
         {/* Right column: Content cards */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
           <div className="pitch-card">
-            <div className="pitch-card-title">💎 PREMIUM COSMETICS</div>
+            <div className="pitch-card-title">💎 PREMIUM CURRENCY MONETIZATION</div>
             <div className="pitch-card-body">
-              Skins, animations, emotes, and pilot alterations. No pay-to-win mechanics — purely visual.
+              Initial monetization will focus on non-pay-to-win cosmetics, seasonal passes, Reddit Gold purchases, and sponsored collaborations. 
+              We will validate ARPU, conversion, and retention across first-party titles before expanding into third-party publishing.
               <br /><br />
-              <strong>Revenue model:</strong> 70% margins on cosmetics sales. Average ARPU: $8–12 per active player.
             </div>
           </div>
-
           <div className="pitch-card">
-            <div className="pitch-card-title">🎫 BATTLE PASS</div>
+            <div className="pitch-card-title">🤝 GRANTS & COLLABORATIONS</div>
             <div className="pitch-card-body">
-              Seasonal progression ($9.99/season). Free track available, premium track unlocks exclusive cosmetics and XP boosts.
-              <br /><br />
-              <strong>Projection:</strong> 15–20% player conversion per season, $2–3 ARPU per player.
-            </div>
-          </div>
+              Reddit's Fund supports virality of games with up to $200k in grants for creating played games. Monetization is early, 
+              but we can start with revenue share on Fund-supported titles and expand into sponsored collaborations with brands and IP holders.
 
-          <div className="pitch-card">
-            <div className="pitch-card-title">🏪 AUCTION HOUSE</div>
-            <div className="pitch-card-body">
-              Player-to-player trading of pilots. Enables the secondary market without taking fees.
               <br /><br />
-              <strong>Why this works:</strong> Players gain agency in roster building. Secondary market increases pilot acquisition velocity and trading activity.
-            </div>
-          </div>
-
-          <div className="pitch-card">
-            <div className="pitch-card-title">🤝 SPONSORSHIPS & COLLABORATIONS</div>
-            <div className="pitch-card-body">
-              Brand partnerships and in-game collaborations. Special edition cosmetics tied to real-world brands and creators.
-              <br /><br />
-              <strong>Examples:</strong> Limited-edition skins, branded emotes, crossover pilots from other franchises, seasonal collaborations.
-              <br /><br />
-              <strong>Revenue model:</strong> 60/40 revenue split with partners. Low execution lift, high brand value. A Fortnite collaboration model adapted for Reddit's indie aesthetic.
+              Reddit is also early in exploring paid attention and analytics services for game developers. We can position Anomaly as a 
+              growth partner for Fund-supported titles, offering paid services to help them optimize their games and scale their audiences.
             </div>
           </div>
 
           <div className="pitch-card">
             <div className="pitch-card-title">📊 REVENUE PROJECTIONS</div>
             <div className="pitch-card-body">
-              <strong>Y1:</strong> 50k players, $400k–600k MRR (cosmetics + cosmetics)
+              <strong>Y1:</strong> 10 Games, 50k players each, $400k–600k MRR (Reddit Gold)
               <br />
-              <strong>Y2:</strong> 500k players, $2–3M MRR (scaled + auction house + esports)
-              <br />
-              <strong>Y3:</strong> 2M+ players, $8–12M MRR (full ecosystem)
+              <strong>Y2+:</strong> 20 Games, 500k players each, $400k–600k MRR (Reddit Gold, Revenue Share with Reddit Attention)
             </div>
           </div>
         </div>
@@ -1677,3 +1668,6 @@ function PitchApp() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<PitchApp />);
+/* hot-reload probe */
+/* hot-reload probe 1780515122 */
+console.log("hot reload probe " + Date.now());
