@@ -929,7 +929,7 @@ function MarketOpportunityPage({ onBack, onNext }) {
           <div className="pitch-card">
             <div className="pitch-card-title">📈 MARKET SIZE</div>
             <div className="pitch-card-body">
-              <strong>Total Addressable Market:</strong> $12B+ digital collectibles + esports
+              <strong>Total Addressable Market:</strong> $12B+ digital collectibles
               <br /><br />
               <strong>Serviceable Market:</strong> Reddit's 420M monthly active users, gaming audience estimated at 50M+
               <br /><br />
