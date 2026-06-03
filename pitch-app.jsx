@@ -175,6 +175,7 @@ function VisionPage({ onBack }) {
               <span style={{ color: "var(--c-ink)" }}>
                 <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>48</span> tracked native games. <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>1.4M</span> weekly active users. <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>532K</span> weekly contributions. A solo developer just hit <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>414,000</span> weekly players in 8 months — without spending a dollar on marketing. The average game on the platform converts <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>38%</span> of its players into active contributors every week, four to eight times higher than mobile.
               </span>
+              <br /><br />
               <a href="https://reddit.poweredbynova.ai" target="_blank" rel="noopener noreferrer" 
               style={{ color: "var(--c-left)", fontWeight: "600", marginLeft: "4px" }}>
                 See our Reddit Games Dashboard, tracking the entire ecosystem in real time
@@ -196,6 +197,52 @@ function VisionPage({ onBack }) {
               <strong>Scoop City</strong> — Ice Cream Shop Sim. Time management meets Reddit virality. Create and share your wackiest sundaes. Real life geo features resembling Pokemon Go.
               <br /><br />
               Designed to be natively shareable, virally engaging, and monetizable through Reddit's existing systems.
+            </div>
+
+            <div style={{
+              marginTop: "16px",
+              width: "50%",
+              borderRadius: "8px",
+              overflow: "hidden",
+              border: "1px solid rgba(25, 230, 196, 0.2)",
+              background: "#02060a",
+            }}>
+              {/* Crop 20% off the left and right of the source video.
+                  Source is 640x360; cropped frame is 384x360. */}
+              <div style={{
+                position: "relative",
+                width: "100%",
+                aspectRatio: "384 / 360",
+                overflow: "hidden",
+              }}>
+                <video
+                  src="assets/dailyrun.mov"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="none"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: "-33.3333%",
+                    width: "166.6667%",
+                    height: "100%",
+                    display: "block",
+                  }}
+                />
+              </div>
+              <div style={{
+                padding: "8px 12px",
+                fontFamily: "var(--f-mono)",
+                fontSize: "11px",
+                letterSpacing: "0.18em",
+                color: "var(--c-left)",
+                borderTop: "1px solid rgba(25, 230, 196, 0.15)",
+                textTransform: "uppercase",
+              }}>
+                Don't Die — Daily Run
+              </div>
             </div>
           </div>
 
@@ -337,15 +384,9 @@ function RedditStrategyPage({ onBack }) {
         <div className="pitch-card">
           <div className="pitch-card-title">💰 MONETIZATION</div>
           <div className="pitch-card-body">
-            <strong>Premium cosmetics:</strong> Skins, animations, taunts ($4.99 each)
-            <br />
-            <strong>Battle Pass:</strong> Seasonal progression ($9.99/season)
-            <br />
-            <strong>Gold purchases:</strong> Players buy gold with real money, can convert to limited credits for cosmetics
-            <br />
-            <strong>Sponsorships:</strong> In-game tournament prize pools
-            <br /><br />
-            <strong>Reddit gets a cut.</strong> Platform success = platform revenue.
+            
+            Reddit monetization is still early, which creates the opportunity. Anomaly will begin with proven, 
+            low-friction revenue loops: non-pay-to-win cosmetics, premium currency, seasonal passes, grants, and sponsored collaborations.
           </div>
         </div>
         </div>
@@ -638,23 +679,48 @@ function AIDifferencePage({ onBack }) {
 
         {/* Don't Die: video + content card */}
         <div style={{ display: "grid", gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
-          {/* Left column: Video placeholder */}
+          {/* Left column: Don't Die — Daily Run */}
           <div style={{
             borderRadius: "8px",
             overflow: "hidden",
-            border: "1px dashed rgba(25, 230, 196, 0.35)",
-            height: "600px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "rgba(0,0,0,0.25)",
-            color: "var(--c-left)",
-            fontSize: "13px",
-            letterSpacing: "0.15em",
-            textAlign: "center",
-            padding: "20px",
+            border: "1px solid rgba(25, 230, 196, 0.2)",
+            background: "#02060a",
           }}>
-            VIDEO COMING SOON
+            {/* Crop 20% off the left and right of the source video (640x360 -> 384x360). */}
+            <div style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "384 / 360",
+              overflow: "hidden",
+            }}>
+              <video
+                src="assets/dailyrun.mov"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="none"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: "-33.3333%",
+                  width: "166.6667%",
+                  height: "100%",
+                  display: "block",
+                }}
+              />
+            </div>
+            <div style={{
+              padding: "8px 12px",
+              fontFamily: "var(--f-mono)",
+              fontSize: "11px",
+              letterSpacing: "0.18em",
+              color: "var(--c-left)",
+              borderTop: "1px solid rgba(25, 230, 196, 0.15)",
+              textTransform: "uppercase",
+            }}>
+              Don't Die — Daily Run
+            </div>
           </div>
 
           {/* Right column: Content card */}
@@ -691,23 +757,37 @@ function AIDifferencePage({ onBack }) {
 
         {/* Dynamic data: video + content card */}
         <div style={{ display: "grid", gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
-          {/* Left column: Video placeholder */}
+          {/* Left column: Scoop City */}
           <div style={{
             borderRadius: "8px",
             overflow: "hidden",
-            border: "1px dashed rgba(25, 230, 196, 0.35)",
-            height: "600px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "rgba(0,0,0,0.25)",
-            color: "var(--c-left)",
-            fontSize: "13px",
-            letterSpacing: "0.15em",
-            textAlign: "center",
-            padding: "20px",
+            border: "1px solid rgba(25, 230, 196, 0.2)",
+            background: "#02060a",
           }}>
-            VIDEO COMING SOON
+            <video
+              src="assets/scoopcity.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="none"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+              }}
+            />
+            <div style={{
+              padding: "8px 12px",
+              fontFamily: "var(--f-mono)",
+              fontSize: "11px",
+              letterSpacing: "0.18em",
+              color: "var(--c-left)",
+              borderTop: "1px solid rgba(25, 230, 196, 0.15)",
+              textTransform: "uppercase",
+            }}>
+              Scoop City
+            </div>
           </div>
 
           {/* Right column: Content card */}
@@ -1002,6 +1082,43 @@ function CoreLoopPage({ onBack }) {
           </div>
 
           <div className="pitch-card">
+            <div className="pitch-card-title">🏀 MULTIVERSE BASKETBALL ASSOCIATION — IN ACTION</div>
+            <div style={{
+              marginTop: "12px",
+              width: "50%",
+              borderRadius: "8px",
+              overflow: "hidden",
+              border: "1px solid rgba(25, 230, 196, 0.2)",
+              background: "#02060a",
+            }}>
+              <video
+                src="assets/MBAClip.mov"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="none"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                }}
+              />
+              <div style={{
+                padding: "8px 12px",
+                fontFamily: "var(--f-mono)",
+                fontSize: "11px",
+                letterSpacing: "0.18em",
+                color: "var(--c-left)",
+                borderTop: "1px solid rgba(25, 230, 196, 0.15)",
+                textTransform: "uppercase",
+              }}>
+                Multiverse Basketball Association
+              </div>
+            </div>
+          </div>
+
+          <div className="pitch-card">
             <div className="pitch-card-title">💬 COMMENTS = GUILD COMMS</div>
             <div className="pitch-card-body">
               The comment thread is where the community lives. Players trash talk, celebrate, and strategize in real time.
@@ -1090,13 +1207,9 @@ function PitchDetails({ onBack, onAuction, onVision, onCoreLoop, onMonetization,
         <div className="pitch-card" onClick={onMonetization} style={{ cursor: "pointer" }}>
           <div className="pitch-card-title">💰 MONETIZATION</div>
           <div className="pitch-card-body">
-            <strong>Premium Cosmetics</strong> — Skins, animations, emotes
-            <br />
-            <strong>Battle Pass</strong> — Seasonal progression ($9.99/season)
-            <br />
-            <strong>Gold Purchases</strong> — Reddit-native payments and Gold-based purchase flows where available.
-            <br />
-            <strong>Sponsorships</strong> — Collaborations with high profile organizations
+            
+            Reddit monetization is still early, which creates the opportunity. Anomaly will begin with proven, 
+            low-friction revenue loops: non-pay-to-win cosmetics, premium currency, seasonal passes, grants, and sponsored collaborations.
           </div>
           <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
             CLICK TO EXPLORE →
@@ -1160,22 +1273,7 @@ function PitchDetails({ onBack, onAuction, onVision, onCoreLoop, onMonetization,
         <div className="pitch-card" onClick={onRoadmap} style={{ cursor: "pointer" }}>
           <div className="pitch-card-title">📅 THE ROADMAP</div>
           <div className="pitch-card-body">
-            <strong style={{ color: "var(--c-ink)" }}>Five quarters to dominance.</strong> Build the infrastructure and tools (Q3 2026), launch flagship titles (Q4 2026), compound with a portfolio of hits (Q1 2027), open to third-party studios (Q2 2027), and become Reddit's publisher of record by Q2 2028.
-          </div>
-          <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
-            CLICK TO EXPLORE →
-          </div>
-        </div>
-
-        {/* Card 7: Reddit Strategy */}
-        <div className="pitch-card" onClick={onRedditStrategy} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">📱 REDDIT STRATEGY</div>
-          <div className="pitch-card-body">
-            <strong>Posts Are Games</strong> — A Reddit post hosts the entire match. One click to play.
-            <br />
-            <strong>Community Competitions</strong> — Weekly tournaments and subreddit leagues built on Reddit's tribal structure.
-            <br />
-            <strong>Shared Progression</strong> — Comments are guild comms, upvotes fuel leaderboards, karma is identity.
+            <strong style={{ color: "var(--c-ink)" }}>Five quarters to category leadership.</strong> Build the infrastructure and tools (Q3 2026), launch flagship titles (Q4 2026), compound with a portfolio of hits (Q1 2027), open to third-party studios (Q2 2027), and become Reddit's publisher of record by Q2 2028.
           </div>
           <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
             CLICK TO EXPLORE →
