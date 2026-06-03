@@ -492,7 +492,7 @@ function FounderPage({ onBack }) {
     </div>
   );
 }
-function LivingEconomyPage({ onBack }) {
+function AIDifferencePage({ onBack }) {
   return (
     <div className="pitch-details">
       <div className="pitch-header">
@@ -501,88 +501,215 @@ function LivingEconomyPage({ onBack }) {
           <span>BACK</span>
         </button>
         <div className="pitch-title">
-          <span className="pitch-title-big">LIVING ECONOMY</span>
-          <span className="pitch-title-sub">POWERED BY AI</span>
+          <span className="pitch-title-big">ANOMALY'S LIVING WORLDS</span>
+          <span className="pitch-title-sub">AI AGENTS NATIVE TO REDDIT</span>
         </div>
         <div style={{ width: "140px" }}></div>
       </div>
 
-      <div className="pitch-content" style={{ gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
-        {/* Left column: Video */}
-        <div>
-          <div style={{
-            borderRadius: "8px",
-            overflow: "hidden",
-            border: "1px solid rgba(25, 230, 196, 0.2)",
-            position: "relative",
-            height: "600px",
-          }}>
-            <video
-              src="living-economy-demo.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
-            />
+      <div className="pitch-content" style={{ gridTemplateColumns: "1fr", gap: "24px" }}>
+        {/* Opening: AI Agents embedded into Reddit */}
+        <div className="pitch-card">
+          <div className="pitch-card-title">🤖 AI AGENTS EMBEDDED INTO THE REDDIT ECOSYSTEM</div>
+          <div className="pitch-card-body">
+            <strong style={{ color: "var(--c-ink)" }}>Most studios bolt AI on as a feature. We build agents that live inside Reddit itself</strong> <span style={{ color: "var(--c-ink)" }}>— autonomous participants embedded directly in the feed, the comments, and the game economy.</span>
+            <br /><br />
+            <span style={{ color: "var(--c-ink)" }}>These agents don't just play our games. They post, comment, bid, scout, and react like real Redditors — seeding activity, filling matchmaking, and keeping every community alive from day one.</span>
+            <br /><br />
+            <strong style={{ color: "var(--c-ink)" }}>The result:</strong> <span style={{ color: "var(--c-ink)" }}>a game world that never feels empty, and a content engine that runs itself. Our AI difference isn't a smarter NPC — it's an always-on population native to the platform.</span>
           </div>
         </div>
 
-        {/* Right column: Content cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
-          <div className="pitch-card">
-            <div className="pitch-card-title">🤖 WHAT IS A LIVING ECONOMY?</div>
-            <div className="pitch-card-body">
-              <strong>Traditional games have static worlds:</strong> Fixed NPCs, predictable markets, limited depth. Players reach endgame and churn.
-              <br /><br />
-              <strong>Anomaly has a living economy:</strong> Server-side AI agents that think, bid, scout, and adapt in real time. They have unique rosters, bidding strategies, and personalities. They're not just opponents — they're market participants, price makers, and ecosystem participants.
-              <br /><br />
-              <strong>What this means:</strong> Every day the economy looks different. New meta emerges. New opportunities surface. The world feels alive.
+        {/* Living Economy subsection label */}
+        <div style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "16px",
+          marginTop: "8px",
+        }}>
+          <div style={{ height: "1px", flex: "0 0 40px", background: "var(--c-left)" }}></div>
+          <span style={{
+            color: "var(--c-left)",
+            fontSize: "14px",
+            letterSpacing: "0.2em",
+            fontWeight: "700",
+          }}>IN PRACTICE — THE LIVING ECONOMY</span>
+          <div style={{ height: "1px", flex: "1", background: "rgba(25, 230, 196, 0.2)" }}></div>
+        </div>
+
+        {/* Living Economy: video + content cards */}
+        <div style={{ display: "grid", gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
+          {/* Left column: Video */}
+          <div>
+            <div style={{
+              borderRadius: "8px",
+              overflow: "hidden",
+              border: "1px solid rgba(25, 230, 196, 0.2)",
+              position: "relative",
+              height: "600px",
+            }}>
+              <video
+                src="living-economy-demo.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
             </div>
           </div>
 
-          <div className="pitch-card">
-            <div className="pitch-card-title">🏆 RANKED LADDER WITH AGENTS</div>
-            <div className="pitch-card-body">
-              <strong>Queue System:</strong> Players are matched against ranked opponents based on their player roster strength AND agent rosters.
-              <br /><br />
-              <strong>Agent Variety:</strong> Different agents have different strategies:
-              <br />
-              • Aggressive bidders who drive auction prices
-              <br />
-              • Defensive builders who stack synergies
-              <br />
-              • Speculators who flip pilots for profit
-              <br />
-              • Scout agents who discover undervalued pilots
+          {/* Right column: Content cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
+            <div className="pitch-card">
+              <div className="pitch-card-title">🤖 WHAT IS A LIVING ECONOMY?</div>
+              <div className="pitch-card-body">
+                <strong>The hardest problem in games isn't building a world — it's keeping it alive after launch.</strong> Scripted economies go stale; players churn.
+                <br /><br />
+                <strong>Anomaly has a living economy:</strong> Server-side AI agents that think, bid, scout, and adapt in real time. They have unique rosters, bidding strategies, and personalities. They're not just opponents — they're market participants, price makers, and ecosystem participants.
+                <br /><br />
+                <strong>What this means:</strong> Every day the economy looks different. New meta emerges. New opportunities surface. The world feels alive.
+              </div>
+            </div>
+
+            <div className="pitch-card">
+              <div className="pitch-card-title">🏆 RANKED LADDER WITH AGENTS</div>
+              <div className="pitch-card-body">
+                <strong>Queue System:</strong> Players are matched against ranked opponents based on their player roster strength AND agent rosters.
+                <br /><br />
+                <strong>Agent Variety:</strong> Different agents have different strategies:
+                <br />
+                • Aggressive bidders who drive auction prices
+                <br />
+                • Scout agents who discover undervalued pilots
+                <br /><br />
+                <strong>Solving Cold Start:</strong> Day 1, new players draft a starter roster, queue matches against agents, win gold, bid in auctions, and climb the leaderboard — a thriving ecosystem with competitive matches, an active auction market, and meaningful progression from the very first session.
+              </div>
+            </div>
+
+            <div className="pitch-card">
+              <div className="pitch-card-title">💎 MARKET MAKING VIA AGENTS</div>
+              <div className="pitch-card-body">
+                <strong>Liquidity on demand:</strong> Agents always bid if prices drop too low
+                <br />
+                <strong>Price stability:</strong> Agents dampen extreme volatility
+                <br />
+                <strong>Player confidence:</strong> Market depth feels real
+                <br />
+                <strong>Natural progression:</strong> Agents sell inventory as players climb ranks
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="pitch-card">
-            <div className="pitch-card-title">💎 MARKET MAKING VIA AGENTS</div>
-            <div className="pitch-card-body">
-              <strong>Liquidity on demand:</strong> Agents always bid if prices drop too low
-              <br />
-              <strong>Price stability:</strong> Agents dampen extreme volatility
-              <br />
-              <strong>Player confidence:</strong> Market depth feels real
-              <br />
-              <strong>Natural progression:</strong> Agents sell inventory as players climb ranks
-            </div>
+        {/* Don't Die — daily roguelike subsection label */}
+        <div style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "16px",
+          marginTop: "8px",
+        }}>
+          <div style={{ height: "1px", flex: "0 0 40px", background: "var(--c-left)" }}></div>
+          <span style={{
+            color: "var(--c-left)",
+            fontSize: "14px",
+            letterSpacing: "0.2em",
+            fontWeight: "700",
+          }}>IN PRACTICE — DON'T DIE: DAILY ROGUELIKE</span>
+          <div style={{ height: "1px", flex: "1", background: "rgba(25, 230, 196, 0.2)" }}></div>
+        </div>
+
+        {/* Don't Die: video + content card */}
+        <div style={{ display: "grid", gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
+          {/* Left column: Video placeholder */}
+          <div style={{
+            borderRadius: "8px",
+            overflow: "hidden",
+            border: "1px dashed rgba(25, 230, 196, 0.35)",
+            height: "600px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "rgba(0,0,0,0.25)",
+            color: "var(--c-left)",
+            fontSize: "13px",
+            letterSpacing: "0.15em",
+            textAlign: "center",
+            padding: "20px",
+          }}>
+            VIDEO COMING SOON
           </div>
 
-          <div className="pitch-card">
-            <div className="pitch-card-title">🎯 SOLVING COLD START</div>
-            <div className="pitch-card-body">
-              <strong>Day 1 for new players:</strong> Draft a starter roster, queue matches against agents, win gold, bid in auctions, climb the leaderboard.
-              <br /><br />
-              <strong>What they feel:</strong> A thriving ecosystem with competitive matches, active auction market, and meaningful progression.
+          {/* Right column: Content card */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
+            <div className="pitch-card">
+              <div className="pitch-card-title">🗡️ AGENT-GENERATED DAILY CHALLENGES</div>
+              <div className="pitch-card-body">
+                <strong style={{ color: "var(--c-ink)" }}>A deck-building roguelike in the Slay the Spire tradition — but the runs build themselves.</strong>
+                <br /><br />
+                <span style={{ color: "var(--c-ink)" }}>An AI agent auto-generates a fresh daily challenge — new map, enemies, relics, and modifiers — and posts it straight to Reddit as a playable post. Every day is a new seed, a new leaderboard, a new conversation.</span>
+                <br /><br />
+                <strong style={{ color: "var(--c-ink)" }}>Why it works:</strong> <span style={{ color: "var(--c-ink)" }}>The content engine never sleeps and never runs dry. Players return daily to chase the same seed, compare runs in the comments, and the post itself is the distribution.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Dynamic data game subsection label */}
+        <div style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "16px",
+          marginTop: "8px",
+        }}>
+          <div style={{ height: "1px", flex: "0 0 40px", background: "var(--c-left)" }}></div>
+          <span style={{
+            color: "var(--c-left)",
+            fontSize: "14px",
+            letterSpacing: "0.2em",
+            fontWeight: "700",
+          }}>IN PRACTICE — REAL-WORLD DYNAMIC DATA</span>
+          <div style={{ height: "1px", flex: "1", background: "rgba(25, 230, 196, 0.2)" }}></div>
+        </div>
+
+        {/* Dynamic data: video + content card */}
+        <div style={{ display: "grid", gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
+          {/* Left column: Video placeholder */}
+          <div style={{
+            borderRadius: "8px",
+            overflow: "hidden",
+            border: "1px dashed rgba(25, 230, 196, 0.35)",
+            height: "600px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "rgba(0,0,0,0.25)",
+            color: "var(--c-left)",
+            fontSize: "13px",
+            letterSpacing: "0.15em",
+            textAlign: "center",
+            padding: "20px",
+          }}>
+            VIDEO COMING SOON
+          </div>
+
+          {/* Right column: Content card */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
+            <div className="pitch-card">
+              <div className="pitch-card-title">🌎 REAL-WORLD DATA AS GAME FUEL</div>
+              <div className="pitch-card-body">
+                <strong style={{ color: "var(--c-ink)" }}>A game world wired directly into reality.</strong>
+                <br /><br />
+                <span style={{ color: "var(--c-ink)" }}>Real-life events, live weather, and real-time data feeds stream in, and an AI agent monitors them to generate dynamic game content — events, conditions, and challenges that mirror what's actually happening in the world.</span>
+                <br /><br />
+                <strong style={{ color: "var(--c-ink)" }}>Why it works:</strong> <span style={{ color: "var(--c-ink)" }}>The game is never the same twice and is impossible to fully script around. A storm rolls through your city, the world reacts. The agent turns the real world into an endless, self-refreshing content pipeline.</span>
+              </div>
             </div>
           </div>
         </div>
@@ -977,7 +1104,7 @@ function PitchDetails({ onBack, onAuction, onVision, onCoreLoop, onMonetization,
             <br />
             <strong>Gold Purchases</strong> — Players buy gold with real money, can convert to limited credits for cosmetics
             <br />
-            <strong>Esports Sponsorships</strong> — In-game tournaments with prize pools
+            <strong>Sponsorships</strong> — Collaborations with high profile organizations
           </div>
           <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
             CLICK TO EXPLORE →
@@ -1003,13 +1130,13 @@ function PitchDetails({ onBack, onAuction, onVision, onCoreLoop, onMonetization,
           </div>
         </div>
 
-        {/* Card 5: Living Economy — CLICKABLE */}
+        {/* Card 5: AI Difference — CLICKABLE */}
         <div className="pitch-card" onClick={onLivingEconomy} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">🤖 LIVING ECONOMY</div>
+          <div className="pitch-card-title">🌐 ANOMALY'S LIVING WORLDS</div>
           <div className="pitch-card-body">
-            AI-powered server agents create a dynamic ecosystem that evolves daily. They bid, scout, compete, and adapt — filling matchmaking, creating market liquidity, and enabling seamless progression.
+            AI agents embedded natively into the Reddit ecosystem — they post, comment, bid, and compete like real Redditors, seeding activity and keeping every community alive from day one.
             <br /><br />
-            No cold start. No empty leaderboards. No churn from stale endgame. A world that feels alive.
+            In practice, this powers a living economy: no cold start, no empty leaderboards, no churn from stale endgame. A world that feels alive.
           </div>
           <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
             CLICK TO EXPLORE →
@@ -1444,7 +1571,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <LivingEconomyPage onBack={() => setState("pitch-details")} />
+              <AIDifferencePage onBack={() => setState("pitch-details")} />
             </>
           )}
 
