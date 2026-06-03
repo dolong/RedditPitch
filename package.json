@@ -1,0 +1,13 @@
+{
+  "name": "redditpitch",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Anomaly Studio — Reddit Games Pipeline pitch deck",
+  "scripts": {
+    "build": "esbuild pitch-app.jsx tweaks-panel.jsx auction.jsx post.jsx --target=es2018 --outdir=. --allow-overwrite",
+    "watch": "npm run build -- --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  }
+}
