@@ -5,9 +5,14 @@
   "description": "Anomaly Studio — Reddit Games Pipeline pitch deck",
   "scripts": {
     "build": "esbuild pitch-app.jsx tweaks-panel.jsx auction.jsx post.jsx --target=es2018 --outdir=. --allow-overwrite",
-    "watch": "npm run build -- --watch"
+    "watch": "npm run build -- --watch",
+    "serve": "serve . -l 8731 --no-clipboard",
+    "start": "npm run build && npm run serve",
+    "dev": "concurrently -n watch,serve -c green,cyan \"npm:watch\" \"npm:serve\""
   },
   "devDependencies": {
-    "esbuild": "^0.28.0"
+    "concurrently": "^10.0.3",
+    "esbuild": "^0.28.0",
+    "serve": "^14.2.6"
   }
 }
