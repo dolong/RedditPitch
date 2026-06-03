@@ -572,7 +572,7 @@ function AIDifferencePage({ onBack }) {
               <div className="pitch-card-body">
                 <strong>The hardest problem in games isn't building a world — it's keeping it alive after launch.</strong> Scripted economies go stale; players churn.
                 <br /><br />
-                <strong>Anomaly has a living economy:</strong> Server-side AI agents that think, bid, scout, and adapt in real time. They have unique rosters, bidding strategies, and personalities. They're not just opponents — they're market participants, price makers, and ecosystem participants.
+                <strong>Anomaly has a living economy:</strong> Admin AI Assisted controlled agents that think, bid, scout, and adapt in real time. They have unique rosters, bidding strategies, and personalities. They're not just opponents — they're market participants, price makers, and ecosystem participants.
                 <br /><br />
                 <strong>What this means:</strong> Every day the economy looks different. New meta emerges. New opportunities surface. The world feels alive.
               </div>
@@ -1068,7 +1068,9 @@ function PitchDetails({ onBack, onAuction, onVision, onCoreLoop, onMonetization,
         <div className="pitch-card" onClick={onVision} style={{ cursor: "pointer" }}>
           <div className="pitch-card-title">⚡ VISION</div>
           <div className="pitch-card-body">
-            <strong>Reddit is the last untapped platform for native games.</strong> 420M monthly active users. A developer platform that runs code in posts. Built-in identity, payments, and distribution.
+            <strong>Reddit has quietly become a native games platform.</strong> Anomaly has the data, tooling, AI systems, and game production engine to become the first major Reddit-native games publisher.
+            <br /><br />
+             420M monthly active users. A developer platform that runs code in posts. Built-in identity, payments, and distribution.
             <br /><br />
             <strong>Anomaly</strong> is building the <strong>Reddit Games Pipeline</strong> — flagship games that prove games are Reddit's killer app.
           </div>
@@ -1079,15 +1081,14 @@ function PitchDetails({ onBack, onAuction, onVision, onCoreLoop, onMonetization,
 
         {/* Card 2: Core Loop — CLICKABLE */}
         <div className="pitch-card" onClick={onCoreLoop} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">🎮 CORE LOOP</div>
+          <div className="pitch-card-title">🎮 NEW INNOVATIVE LOOPS</div>
           <div className="pitch-card-body">
-            <strong>1. Collect</strong> — Draft or auction legendary pixel pilots
+            <strong>Collect, Customize, Compete, and Trade</strong> — Draft legendary pixel athletes, Build lineups around playstyles, Bid, auction, and upgrade your roster through a player-driven market
             <br />
-            <strong>2. Customize</strong> — Build your roster with tactical terrain synergies
+            <strong>Casual Evergreen Games</strong> —  Automated engagement loops, live events, and dynamic content keep the world fresh and players coming back for more
             <br />
-            <strong>3. Compete</strong> — Real-time 1v1 matchmaking with live bidding
-            <br />
-            <strong>4. Earn</strong> — Win credits, climb ranks, unlock new cosmetics
+            <strong>Virality in Mind</strong> — Share simple things like Ice Cream cones in shareable Reddit post, with built-in commenting to drive community and discovery
+            
           </div>
           <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
             CLICK TO EXPLORE →
@@ -1102,7 +1103,7 @@ function PitchDetails({ onBack, onAuction, onVision, onCoreLoop, onMonetization,
             <br />
             <strong>Battle Pass</strong> — Seasonal progression ($9.99/season)
             <br />
-            <strong>Gold Purchases</strong> — Players buy gold with real money, can convert to limited credits for cosmetics
+            <strong>Gold Purchases</strong> — Reddit-native payments and Gold-based purchase flows where available.
             <br />
             <strong>Sponsorships</strong> — Collaborations with high profile organizations
           </div>
