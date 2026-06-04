@@ -542,7 +542,7 @@ function FounderPage({ onBack, onOverview, onNext }) {
 function AIDifferencePage({ onBack, onOverview, onNext }) {
   return (
     <div className="pitch-details">
-      <PitchHeader titleBig="ANOMALY'S LIVING WORLDS" titleSub="AI AGENTS NATIVE TO REDDIT" onBack={onBack} onOverview={onOverview} onNext={onNext} />
+      <PitchHeader titleBig="LIVING WORLDS" titleSub="AI AGENTS NATIVE TO REDDIT" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "1fr", gap: "24px" }}>
         {/* Opening: AI Agents embedded into Reddit */}
@@ -1218,7 +1218,7 @@ function PitchDetails({ onAuction, onVision, onCoreLoop, onMonetization, onMarke
 
         {/* Card 5: AI Difference — CLICKABLE */}
         <div className="pitch-card" onClick={onLivingEconomy} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">🌐 ANOMALY'S LIVING WORLDS</div>
+          <div className="pitch-card-title">🌐 LIVING WORLDS</div>
           <div className="pitch-card-body">
             AI agents embedded natively into the Reddit ecosystem — they post, comment, bid, and compete like real Redditors, seeding activity and keeping every community alive from day one.
             <br /><br />
