@@ -159,8 +159,29 @@ function PitchHeader({ titleBig, titleSub, onBack, onOverview, onNext }) {
   );
 }
 
+function PitchFooterNav({ onBack, onNext, nextTitle }) {
+  // Landing has no nav callbacks → render nothing.
+  if (!onBack && !onNext) return null;
+  return (
+    <div className="pitch-footer-nav">
+      {onBack ? (
+        <button className="pitch-back-btn" onClick={onBack}>
+          <span>◀</span>
+          <span>BACK</span>
+        </button>
+      ) : <div></div>}
+      {onNext ? (
+        <button className="pitch-back-btn pitch-next-btn" onClick={onNext}>
+          <span>NEXT{nextTitle ? `: ${nextTitle}` : ""}</span>
+          <span>▶</span>
+        </button>
+      ) : <div></div>}
+    </div>
+  );
+}
+
 // ─── Vision Page ───────────────────────────────────────────
-function VisionPage({ onBack, onOverview, onNext }) {
+function VisionPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
       <PitchHeader titleBig="VISION" titleSub="GAMING ON REDDIT" onBack={onBack} onOverview={onOverview} onNext={onNext} />
@@ -291,6 +312,8 @@ function VisionPage({ onBack, onOverview, onNext }) {
         </div>
       </div>
 
+      <PitchFooterNav onBack={onBack} onNext={onNext} nextTitle={nextTitle} />
+
       <div className="pitch-footer">
         <span>ANOMALY STUDIO © 2026</span>
         <span>REDDIT GAMES PIPELINE</span>
@@ -300,7 +323,7 @@ function VisionPage({ onBack, onOverview, onNext }) {
 }
 
 // ─── Reddit Strategy Page ─────────────────────────────────
-function RedditStrategyPage({ onBack, onOverview, onNext }) {
+function RedditStrategyPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
       <PitchHeader titleBig="REDDIT STRATEGY" titleSub="GAMEPLAY × PLATFORM" onBack={onBack} onOverview={onOverview} onNext={onNext} />
@@ -410,6 +433,8 @@ function RedditStrategyPage({ onBack, onOverview, onNext }) {
         </div>
       </div>
 
+      <PitchFooterNav onBack={onBack} onNext={onNext} nextTitle={nextTitle} />
+
       <div className="pitch-footer">
         <span>ANOMALY STUDIO © 2026</span>
         <span>REDDIT GAMES PIPELINE</span>
@@ -419,7 +444,7 @@ function RedditStrategyPage({ onBack, onOverview, onNext }) {
 }
 
 // ─── Roadmap Page ───────────────────────────────────────
-function RoadmapPage({ onBack, onOverview, onNext }) {
+function RoadmapPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
       <PitchHeader titleBig="ROADMAP" titleSub="18-MONTH EXECUTION" onBack={onBack} onOverview={onOverview} onNext={onNext} />
@@ -475,6 +500,8 @@ function RoadmapPage({ onBack, onOverview, onNext }) {
         </div>
       </div>
 
+      <PitchFooterNav onBack={onBack} onNext={onNext} nextTitle={nextTitle} />
+
       <div className="pitch-footer">
         <span>ANOMALY STUDIO © 2026</span>
         <span>REDDIT GAMES PIPELINE</span>
@@ -484,7 +511,7 @@ function RoadmapPage({ onBack, onOverview, onNext }) {
 }
 
 // ─── Founder Page ──────────────────────────────────────────
-function FounderPage({ onBack, onOverview, onNext }) {
+function FounderPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
       <PitchHeader titleBig="THE FOUNDER" titleSub="LONG DO" onBack={onBack} onOverview={onOverview} onNext={onNext} />
@@ -532,6 +559,8 @@ function FounderPage({ onBack, onOverview, onNext }) {
         </div>
       </div>
 
+      <PitchFooterNav onBack={onBack} onNext={onNext} nextTitle={nextTitle} />
+
       <div className="pitch-footer">
         <span>ANOMALY STUDIO © 2026</span>
         <span>REDDIT GAMES PIPELINE</span>
@@ -539,7 +568,7 @@ function FounderPage({ onBack, onOverview, onNext }) {
     </div>
   );
 }
-function AIDifferencePage({ onBack, onOverview, onNext }) {
+function AIDifferencePage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
       <PitchHeader titleBig="LIVING WORLDS" titleSub="AI AGENTS NATIVE TO REDDIT" onBack={onBack} onOverview={onOverview} onNext={onNext} />
@@ -794,6 +823,8 @@ function AIDifferencePage({ onBack, onOverview, onNext }) {
         </div>
       </div>
 
+      <PitchFooterNav onBack={onBack} onNext={onNext} nextTitle={nextTitle} />
+
       <div className="pitch-footer">
         <span>ANOMALY STUDIO © 2026</span>
         <span>REDDIT GAMES PIPELINE</span>
@@ -801,7 +832,7 @@ function AIDifferencePage({ onBack, onOverview, onNext }) {
     </div>
   );
 }
-function MarketOpportunityPage({ onBack, onOverview, onNext }) {
+function MarketOpportunityPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
       <PitchHeader titleBig="MARKET OPPORTUNITY" titleSub="REDDIT'S GAMING ECOSYSTEM" onBack={onBack} onOverview={onOverview} onNext={onNext} />
@@ -917,6 +948,8 @@ function MarketOpportunityPage({ onBack, onOverview, onNext }) {
         </div>
       </div>
 
+      <PitchFooterNav onBack={onBack} onNext={onNext} nextTitle={nextTitle} />
+
       <div className="pitch-footer">
         <span>ANOMALY STUDIO © 2026</span>
         <span>REDDIT GAMES PIPELINE</span>
@@ -924,7 +957,7 @@ function MarketOpportunityPage({ onBack, onOverview, onNext }) {
     </div>
   );
 }
-function MonetizationPage({ onBack, onOverview, onNext }) {
+function MonetizationPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
       <PitchHeader titleBig="MONETIZATION" titleSub="SUSTAINABLE REVENUE" onBack={onBack} onOverview={onOverview} onNext={onNext} />
@@ -1007,6 +1040,8 @@ function MonetizationPage({ onBack, onOverview, onNext }) {
         </div>
       </div>
 
+      <PitchFooterNav onBack={onBack} onNext={onNext} nextTitle={nextTitle} />
+
       <div className="pitch-footer">
         <span>ANOMALY STUDIO © 2026</span>
         <span>REDDIT GAMES PIPELINE</span>
@@ -1014,7 +1049,7 @@ function MonetizationPage({ onBack, onOverview, onNext }) {
     </div>
   );
 }
-function CoreLoopPage({ onBack, onOverview, onNext }) {
+function CoreLoopPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
       <PitchHeader titleBig="REDDIT MECHANICS" titleSub="POSTS ARE GAMES" onBack={onBack} onOverview={onOverview} onNext={onNext} />
@@ -1132,6 +1167,8 @@ function CoreLoopPage({ onBack, onOverview, onNext }) {
           </div>
         </div>
       </div>
+
+      <PitchFooterNav onBack={onBack} onNext={onNext} nextTitle={nextTitle} />
 
       <div className="pitch-footer">
         <span>ANOMALY STUDIO © 2026</span>
@@ -1494,7 +1531,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <VisionPage onBack={() => setState("pitch-details")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-coreloop")} />
+              <VisionPage onBack={() => setState("pitch-details")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-coreloop")} nextTitle="REDDIT MECHANICS" />
             </>
           )}
 
@@ -1523,7 +1560,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <CoreLoopPage onBack={() => setState("pitch-vision")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-monetization")} />
+              <CoreLoopPage onBack={() => setState("pitch-vision")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-monetization")} nextTitle="MONETIZATION" />
             </>
           )}
 
@@ -1610,7 +1647,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <FounderPage onBack={() => setState("pitch-living-economy")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-roadmap")} />
+              <FounderPage onBack={() => setState("pitch-living-economy")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-roadmap")} nextTitle="ROADMAP" />
             </>
           )}
 
@@ -1639,7 +1676,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <AIDifferencePage onBack={() => setState("pitch-market")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-founder")} />
+              <AIDifferencePage onBack={() => setState("pitch-market")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-founder")} nextTitle="THE FOUNDER" />
             </>
           )}
 
@@ -1668,7 +1705,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <MarketOpportunityPage onBack={() => setState("pitch-monetization")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-living-economy")} />
+              <MarketOpportunityPage onBack={() => setState("pitch-monetization")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-living-economy")} nextTitle="LIVING WORLDS" />
             </>
           )}
 
@@ -1697,7 +1734,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <MonetizationPage onBack={() => setState("pitch-coreloop")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-market")} />
+              <MonetizationPage onBack={() => setState("pitch-coreloop")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-market")} nextTitle="MARKET OPPORTUNITY" />
             </>
           )}
 
