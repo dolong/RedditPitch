@@ -120,18 +120,31 @@ function PitchHero({ onStart }) {
   );
 }
 
-// ─── Vision Page ───────────────────────────────────────────
-function VisionPage({ onBack, onNext }) {
+// ─── Section order + shared header ────────────────────────
+const SECTION_ORDER = [
+  "pitch-vision",
+  "pitch-coreloop",
+  "pitch-monetization",
+  "pitch-market",
+  "pitch-living-economy",
+  "pitch-founder",
+  "pitch-roadmap",
+];
+
+function PitchHeader({ titleBig, titleSub, onBack, onOverview, onNext }) {
   return (
-    <div className="pitch-details">
-      <div className="pitch-header">
+    <div className="pitch-header">
+      {onOverview && (
+        <button className="pitch-overview-btn" onClick={onOverview}>OVERVIEW</button>
+      )}
+      <div className="pitch-header-row">
         <button className="pitch-back-btn" onClick={onBack}>
           <span>◀</span>
-          <span>HOME</span>
+          <span>BACK</span>
         </button>
         <div className="pitch-title">
-          <span className="pitch-title-big">VISION</span>
-          <span className="pitch-title-sub">GAMING ON REDDIT</span>
+          <span className="pitch-title-big">{titleBig}</span>
+          <span className="pitch-title-sub">{titleSub}</span>
         </div>
         {onNext ? (
           <button className="pitch-back-btn" onClick={onNext}>
@@ -142,6 +155,15 @@ function VisionPage({ onBack, onNext }) {
           <div style={{ width: "140px" }}></div>
         )}
       </div>
+    </div>
+  );
+}
+
+// ─── Vision Page ───────────────────────────────────────────
+function VisionPage({ onBack, onOverview, onNext }) {
+  return (
+    <div className="pitch-details">
+      <PitchHeader titleBig="VISION" titleSub="GAMING ON REDDIT" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
         {/* Left column: Image */}
@@ -278,27 +300,10 @@ function VisionPage({ onBack, onNext }) {
 }
 
 // ─── Reddit Strategy Page ─────────────────────────────────
-function RedditStrategyPage({ onBack, onNext }) {
+function RedditStrategyPage({ onBack, onOverview, onNext }) {
   return (
     <div className="pitch-details">
-      <div className="pitch-header">
-        <button className="pitch-back-btn" onClick={onBack}>
-          <span>◀</span>
-          <span>HOME</span>
-        </button>
-        <div className="pitch-title">
-          <span className="pitch-title-big">REDDIT STRATEGY</span>
-          <span className="pitch-title-sub">GAMEPLAY × PLATFORM</span>
-        </div>
-        {onNext ? (
-          <button className="pitch-back-btn" onClick={onNext}>
-            <span>NEXT</span>
-            <span>▶</span>
-          </button>
-        ) : (
-          <div style={{ width: "140px" }}></div>
-        )}
-      </div>
+      <PitchHeader titleBig="REDDIT STRATEGY" titleSub="GAMEPLAY × PLATFORM" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
         <div style={{
@@ -414,27 +419,10 @@ function RedditStrategyPage({ onBack, onNext }) {
 }
 
 // ─── Roadmap Page ───────────────────────────────────────
-function RoadmapPage({ onBack, onNext }) {
+function RoadmapPage({ onBack, onOverview, onNext }) {
   return (
     <div className="pitch-details">
-      <div className="pitch-header">
-        <button className="pitch-back-btn" onClick={onBack}>
-          <span>◀</span>
-          <span>HOME</span>
-        </button>
-        <div className="pitch-title">
-          <span className="pitch-title-big">ROADMAP</span>
-          <span className="pitch-title-sub">18-MONTH EXECUTION</span>
-        </div>
-        {onNext ? (
-          <button className="pitch-back-btn" onClick={onNext}>
-            <span>NEXT</span>
-            <span>▶</span>
-          </button>
-        ) : (
-          <div style={{ width: "140px" }}></div>
-        )}
-      </div>
+      <PitchHeader titleBig="ROADMAP" titleSub="18-MONTH EXECUTION" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "1fr", gap: "24px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
@@ -496,27 +484,10 @@ function RoadmapPage({ onBack, onNext }) {
 }
 
 // ─── Founder Page ──────────────────────────────────────────
-function FounderPage({ onBack, onNext }) {
+function FounderPage({ onBack, onOverview, onNext }) {
   return (
     <div className="pitch-details">
-      <div className="pitch-header">
-        <button className="pitch-back-btn" onClick={onBack}>
-          <span>◀</span>
-          <span>HOME</span>
-        </button>
-        <div className="pitch-title">
-          <span className="pitch-title-big">THE FOUNDER</span>
-          <span className="pitch-title-sub">LONG DO</span>
-        </div>
-        {onNext ? (
-          <button className="pitch-back-btn" onClick={onNext}>
-            <span>NEXT</span>
-            <span>▶</span>
-          </button>
-        ) : (
-          <div style={{ width: "140px" }}></div>
-        )}
-      </div>
+      <PitchHeader titleBig="THE FOUNDER" titleSub="LONG DO" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "400px 1fr", gap: "24px", alignItems: "start" }}>
         {/* Left column: Photo */}
@@ -568,27 +539,10 @@ function FounderPage({ onBack, onNext }) {
     </div>
   );
 }
-function AIDifferencePage({ onBack, onNext }) {
+function AIDifferencePage({ onBack, onOverview, onNext }) {
   return (
     <div className="pitch-details">
-      <div className="pitch-header">
-        <button className="pitch-back-btn" onClick={onBack}>
-          <span>◀</span>
-          <span>HOME</span>
-        </button>
-        <div className="pitch-title">
-          <span className="pitch-title-big">ANOMALY'S LIVING WORLDS</span>
-          <span className="pitch-title-sub">AI AGENTS NATIVE TO REDDIT</span>
-        </div>
-        {onNext ? (
-          <button className="pitch-back-btn" onClick={onNext}>
-            <span>NEXT</span>
-            <span>▶</span>
-          </button>
-        ) : (
-          <div style={{ width: "140px" }}></div>
-        )}
-      </div>
+      <PitchHeader titleBig="ANOMALY'S LIVING WORLDS" titleSub="AI AGENTS NATIVE TO REDDIT" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "1fr", gap: "24px" }}>
         {/* Opening: AI Agents embedded into Reddit */}
@@ -847,27 +801,10 @@ function AIDifferencePage({ onBack, onNext }) {
     </div>
   );
 }
-function MarketOpportunityPage({ onBack, onNext }) {
+function MarketOpportunityPage({ onBack, onOverview, onNext }) {
   return (
     <div className="pitch-details">
-      <div className="pitch-header">
-        <button className="pitch-back-btn" onClick={onBack}>
-          <span>◀</span>
-          <span>HOME</span>
-        </button>
-        <div className="pitch-title">
-          <span className="pitch-title-big">MARKET OPPORTUNITY</span>
-          <span className="pitch-title-sub">REDDIT'S GAMING ECOSYSTEM</span>
-        </div>
-        {onNext ? (
-          <button className="pitch-back-btn" onClick={onNext}>
-            <span>NEXT</span>
-            <span>▶</span>
-          </button>
-        ) : (
-          <div style={{ width: "140px" }}></div>
-        )}
-      </div>
+      <PitchHeader titleBig="MARKET OPPORTUNITY" titleSub="REDDIT'S GAMING ECOSYSTEM" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
         {/* Left column: Image */}
@@ -987,27 +924,10 @@ function MarketOpportunityPage({ onBack, onNext }) {
     </div>
   );
 }
-function MonetizationPage({ onBack, onNext }) {
+function MonetizationPage({ onBack, onOverview, onNext }) {
   return (
     <div className="pitch-details">
-      <div className="pitch-header">
-        <button className="pitch-back-btn" onClick={onBack}>
-          <span>◀</span>
-          <span>HOME</span>
-        </button>
-        <div className="pitch-title">
-          <span className="pitch-title-big">MONETIZATION</span>
-          <span className="pitch-title-sub">SUSTAINABLE REVENUE</span>
-        </div>
-        {onNext ? (
-          <button className="pitch-back-btn" onClick={onNext}>
-            <span>NEXT</span>
-            <span>▶</span>
-          </button>
-        ) : (
-          <div style={{ width: "140px" }}></div>
-        )}
-      </div>
+      <PitchHeader titleBig="MONETIZATION" titleSub="SUSTAINABLE REVENUE" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
         {/* Left column: Image */}
@@ -1076,27 +996,10 @@ function MonetizationPage({ onBack, onNext }) {
     </div>
   );
 }
-function CoreLoopPage({ onBack, onNext }) {
+function CoreLoopPage({ onBack, onOverview, onNext }) {
   return (
     <div className="pitch-details">
-      <div className="pitch-header">
-        <button className="pitch-back-btn" onClick={onBack}>
-          <span>◀</span>
-          <span>HOME</span>
-        </button>
-        <div className="pitch-title">
-          <span className="pitch-title-big">REDDIT MECHANICS</span>
-          <span className="pitch-title-sub">POSTS ARE GAMES</span>
-        </div>
-        {onNext ? (
-          <button className="pitch-back-btn" onClick={onNext}>
-            <span>NEXT</span>
-            <span>▶</span>
-          </button>
-        ) : (
-          <div style={{ width: "140px" }}></div>
-        )}
-      </div>
+      <PitchHeader titleBig="REDDIT MECHANICS" titleSub="POSTS ARE GAMES" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
         {/* Left column: Image */}
@@ -1579,7 +1482,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <VisionPage onBack={() => setState("pitch-details")} onNext={() => setState("pitch-coreloop")} />
+              <VisionPage onBack={() => setState("pitch-details")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-coreloop")} />
             </>
           )}
 
@@ -1608,7 +1511,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <CoreLoopPage onBack={() => setState("pitch-details")} onNext={() => setState("pitch-monetization")} />
+              <CoreLoopPage onBack={() => setState("pitch-vision")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-monetization")} />
             </>
           )}
 
@@ -1666,7 +1569,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <RoadmapPage onBack={() => setState("pitch-details")} />
+              <RoadmapPage onBack={() => setState("pitch-founder")} onOverview={() => setState("pitch-details")} />
             </>
           )}
 
@@ -1695,7 +1598,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <FounderPage onBack={() => setState("pitch-details")} onNext={() => setState("pitch-roadmap")} />
+              <FounderPage onBack={() => setState("pitch-living-economy")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-roadmap")} />
             </>
           )}
 
@@ -1724,7 +1627,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <AIDifferencePage onBack={() => setState("pitch-details")} onNext={() => setState("pitch-founder")} />
+              <AIDifferencePage onBack={() => setState("pitch-market")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-founder")} />
             </>
           )}
 
@@ -1753,7 +1656,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <MarketOpportunityPage onBack={() => setState("pitch-details")} onNext={() => setState("pitch-living-economy")} />
+              <MarketOpportunityPage onBack={() => setState("pitch-monetization")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-living-economy")} />
             </>
           )}
 
@@ -1782,7 +1685,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <MonetizationPage onBack={() => setState("pitch-details")} onNext={() => setState("pitch-market")} />
+              <MonetizationPage onBack={() => setState("pitch-coreloop")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-market")} />
             </>
           )}
 
