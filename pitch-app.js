@@ -149,12 +149,11 @@ function VisionPage({ onBack, onNext }) {
     "See our Reddit Games Dashboard, tracking the entire ecosystem in real time"
   ), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("strong", { style: { color: "var(--c-ink)" } }, "The infrastructure is already there:"), " ", /* @__PURE__ */ React.createElement("span", { style: { color: "var(--c-ink)" } }, "420M monthly Redditors. A developer platform (Devvit) that runs code natively inside posts. Identity, payments, and distribution built in. Zero app store friction."), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("strong", { style: { color: "var(--c-ink)" } }, "Anomaly is building the Reddit Games Pipeline"), " ", /* @__PURE__ */ React.createElement("span", { style: { color: "var(--c-ink)" } }, "\u2014 a framework, a data layer, and a first-party portfolio that turns this moment into a publishing house. Reddit's killer app is games. We're going to prove it, and we're going to own it."))), /* @__PURE__ */ React.createElement("div", { className: "pitch-card" }, /* @__PURE__ */ React.createElement("div", { className: "pitch-card-title" }, "\u{1F3AE} FIRST TITLES"), /* @__PURE__ */ React.createElement("div", { className: "pitch-card-body" }, /* @__PURE__ */ React.createElement("strong", null, "Multiverse Basketball Association"), " \u2014 Pixel-art esports. Collect pilots, build rosters, compete in 1v1 matches with live auctions.", /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("strong", null, "Don't Die"), " \u2014 Arcade roguelike. Real-time survival gameplay, leaderboards, seasonal runs.", /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("strong", null, "Scoop City"), " \u2014 Ice Cream Shop Sim. Time management meets Reddit virality. Create and share your wackiest sundaes. Real life geo features resembling Pokemon Go.", /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), "Designed to be natively shareable, virally engaging, and monetizable through Reddit's existing systems."), /* @__PURE__ */ React.createElement("div", { style: {
     marginTop: "16px",
-    width: "50%",
     borderRadius: "8px",
     overflow: "hidden",
     border: "1px solid rgba(25, 230, 196, 0.2)",
     background: "#02060a"
-  } }, /* @__PURE__ */ React.createElement("div", { style: {
+  }, className: "pitch-video-half" }, /* @__PURE__ */ React.createElement("div", { style: {
     position: "relative",
     width: "100%",
     aspectRatio: "384 / 360",
@@ -406,12 +405,11 @@ function CoreLoopPage({ onBack, onNext }) {
     fontStyle: "italic"
   } }, "Margaret on our team created Sword & Supper, the first monetized game on Reddit")), /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr", gap: "16px" } }, /* @__PURE__ */ React.createElement("div", { className: "pitch-card" }, /* @__PURE__ */ React.createElement("div", { className: "pitch-card-title" }, "\u{1F4EE} POSTS ARE GAMES"), /* @__PURE__ */ React.createElement("div", { className: "pitch-card-body" }, "A Reddit post hosts the entire match. Open a post, the game loads. One click. No friction.", /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("strong", null, "What it means:"), " Every match is a persistent container with its own URL and thread. Players can share, spectate, and comment on live games. A great match becomes a shareable moment that lands on r/all.")), /* @__PURE__ */ React.createElement("div", { className: "pitch-card" }, /* @__PURE__ */ React.createElement("div", { className: "pitch-card-title" }, "\u{1F3C0} MULTIVERSE BASKETBALL ASSOCIATION \u2014 IN ACTION"), /* @__PURE__ */ React.createElement("div", { style: {
     marginTop: "12px",
-    width: "50%",
     borderRadius: "8px",
     overflow: "hidden",
     border: "1px solid rgba(25, 230, 196, 0.2)",
     background: "#02060a"
-  } }, /* @__PURE__ */ React.createElement("div", { style: {
+  }, className: "pitch-video-half" }, /* @__PURE__ */ React.createElement("div", { style: {
     position: "relative",
     width: "100%",
     aspectRatio: "384 / 360",

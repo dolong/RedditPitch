@@ -208,12 +208,11 @@ function VisionPage({ onBack, onNext }) {
 
             <div style={{
               marginTop: "16px",
-              width: "50%",
               borderRadius: "8px",
               overflow: "hidden",
               border: "1px solid rgba(25, 230, 196, 0.2)",
               background: "#02060a",
-            }}>
+            }} className="pitch-video-half">
               {/* Crop 20% off the left and right of the source video.
                   Source is 640x360; cropped frame is 384x360. */}
               <div style={{
@@ -1141,12 +1140,11 @@ function CoreLoopPage({ onBack, onNext }) {
             <div className="pitch-card-title">🏀 MULTIVERSE BASKETBALL ASSOCIATION — IN ACTION</div>
             <div style={{
               marginTop: "12px",
-              width: "50%",
               borderRadius: "8px",
               overflow: "hidden",
               border: "1px solid rgba(25, 230, 196, 0.2)",
               background: "#02060a",
-            }}>
+            }} className="pitch-video-half">
               {/* Crop 20% off the left and right of the source video (640x360 -> 384x360). */}
               <div style={{
                 position: "relative",

@@ -240,6 +240,11 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Half-width video frame on desktop; goes full-width on the mobile shell
+   so the cropped frame doesn't shrink to a thumbnail in single-column. */
+.pitch-video-half { width: 50%; }
+body.is-mobile .pitch-video-half { width: 100%; }
+
 /* ────────────────────────────────────────────────
    Responsive — pitch screens on the mobile shell
    (body.is-mobile is set by ScaledStage below 900px
