@@ -253,6 +253,12 @@
 
 [data-state="pitch-details"] .pitch-details {
   animation: pitchDetailsIn 500ms ease both;
+  /* Landing has no BACK TO OVERVIEW button, so give the title a bit
+     more breathing room from the top than sub-pages get. */
+  padding-top: 40px;
+}
+body.is-mobile [data-state="pitch-details"] .pitch-details {
+  padding-top: 24px;
 }
 
 @keyframes pitchHeroIn {
