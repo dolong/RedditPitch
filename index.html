@@ -245,6 +245,15 @@
 .pitch-video-half { width: 50%; }
 body.is-mobile .pitch-video-half { width: 100%; }
 
+/* Cropped video frames position the <video> absolutely with width > 100% and
+   height: 100% so the middle 60% is what's visible. The mobile responsive
+   rule above (max-width: 100%; height: auto for .pitch-content video) would
+   clamp those values and break the crop — opt back out for these videos. */
+body.is-mobile .pitch-content .pitch-video-crop video {
+  max-width: none;
+  height: 100%;
+}
+
 /* ────────────────────────────────────────────────
    Responsive — pitch screens on the mobile shell
    (body.is-mobile is set by ScaledStage below 900px

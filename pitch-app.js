@@ -153,7 +153,7 @@ function VisionPage({ onBack, onNext }) {
     overflow: "hidden",
     border: "1px solid rgba(25, 230, 196, 0.2)",
     background: "#02060a"
-  }, className: "pitch-video-half" }, /* @__PURE__ */ React.createElement("div", { style: {
+  }, className: "pitch-video-half" }, /* @__PURE__ */ React.createElement("div", { className: "pitch-video-crop", style: {
     position: "relative",
     width: "100%",
     aspectRatio: "384 / 360",
@@ -277,7 +277,7 @@ function AIDifferencePage({ onBack, onNext }) {
     overflow: "hidden",
     border: "1px solid rgba(25, 230, 196, 0.2)",
     background: "#02060a"
-  } }, /* @__PURE__ */ React.createElement("div", { style: {
+  } }, /* @__PURE__ */ React.createElement("div", { className: "pitch-video-crop", style: {
     position: "relative",
     width: "100%",
     aspectRatio: "384 / 360",
@@ -409,7 +409,7 @@ function CoreLoopPage({ onBack, onNext }) {
     overflow: "hidden",
     border: "1px solid rgba(25, 230, 196, 0.2)",
     background: "#02060a"
-  }, className: "pitch-video-half" }, /* @__PURE__ */ React.createElement("div", { style: {
+  }, className: "pitch-video-half" }, /* @__PURE__ */ React.createElement("div", { className: "pitch-video-crop", style: {
     position: "relative",
     width: "100%",
     aspectRatio: "384 / 360",

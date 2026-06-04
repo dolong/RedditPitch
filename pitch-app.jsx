@@ -215,7 +215,7 @@ function VisionPage({ onBack, onNext }) {
             }} className="pitch-video-half">
               {/* Crop 20% off the left and right of the source video.
                   Source is 640x360; cropped frame is 384x360. */}
-              <div style={{
+              <div className="pitch-video-crop" style={{
                 position: "relative",
                 width: "100%",
                 aspectRatio: "384 / 360",
@@ -721,7 +721,7 @@ function AIDifferencePage({ onBack, onNext }) {
             background: "#02060a",
           }}>
             {/* Crop 20% off the left and right of the source video (640x360 -> 384x360). */}
-            <div style={{
+            <div className="pitch-video-crop" style={{
               position: "relative",
               width: "100%",
               aspectRatio: "384 / 360",
@@ -1146,7 +1146,7 @@ function CoreLoopPage({ onBack, onNext }) {
               background: "#02060a",
             }} className="pitch-video-half">
               {/* Crop 20% off the left and right of the source video (640x360 -> 384x360). */}
-              <div style={{
+              <div className="pitch-video-crop" style={{
                 position: "relative",
                 width: "100%",
                 aspectRatio: "384 / 360",
