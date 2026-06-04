@@ -964,6 +964,15 @@ function MonetizationPage({ onBack, onOverview, onNext }) {
               <strong>Designed by Margaret Robertson on our team, Sword & Supper was the first app to monetize on Reddit</strong> — the launch title for Reddit's payment infrastructure and the platform's earliest test of native monetization at scale.
               <br /><br />
               It crossed <strong>1M+ subscribers</strong>, generated <strong>six-figure revenue</strong>, and produced Reddit's first real dataset on player conversion, retention, and willingness to pay. Sword & Supper is the proof that this model works — and the foundation we're building on.
+              <br /><br />
+              <a
+                href="https://www.reddit.com/r/SwordAndSupperGame/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--c-left)", fontWeight: 600, textDecoration: "underline" }}
+              >
+                Play Sword &amp; Supper here →
+              </a>
             </div>
           </div>
 
