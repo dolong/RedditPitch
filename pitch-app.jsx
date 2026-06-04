@@ -576,7 +576,7 @@ function AIDifferencePage({ onBack, onOverview, onNext, nextTitle }) {
       <div className="pitch-content" style={{ gridTemplateColumns: "1fr", gap: "24px" }}>
         {/* Opening: AI Agents embedded into Reddit */}
         <div className="pitch-card">
-          <div className="pitch-card-title">🤖 AI AGENTS EMBEDDED INTO THE REDDIT ECOSYSTEM</div>
+          <div className="pitch-card-title">🤖 MEANINGFUL AI SYSTEMS IN REDDIT</div>
           <div className="pitch-card-body">
             <strong style={{ color: "var(--c-ink)" }}>Most studios bolt AI on as a feature. 
               Clearly labeled AI opponents and game agents keep worlds active from day one. They can generate daily challenges, fill matchmaking queues, participate in in-game auctions, 
