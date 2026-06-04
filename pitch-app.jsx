@@ -135,7 +135,7 @@ function PitchHeader({ titleBig, titleSub, onBack, onOverview, onNext }) {
   return (
     <div className="pitch-header">
       {onOverview && (
-        <button className="pitch-overview-btn" onClick={onOverview}>OVERVIEW</button>
+        <button className="pitch-overview-btn" onClick={onOverview}>BACK TO OVERVIEW</button>
       )}
       <div className="pitch-header-row">
         <button className="pitch-back-btn" onClick={onBack}>
@@ -1124,19 +1124,14 @@ function CoreLoopPage({ onBack, onOverview, onNext }) {
 }
 
 // ─── Pitch Details Screen ───────────────────────────────────
-function PitchDetails({ onBack, onAuction, onVision, onCoreLoop, onMonetization, onMarketOpportunity, onLivingEconomy, onRedditStrategy, onRoadmap, onFounder }) {
+function PitchDetails({ onAuction, onVision, onCoreLoop, onMonetization, onMarketOpportunity, onLivingEconomy, onRedditStrategy, onRoadmap, onFounder }) {
   return (
     <div className="pitch-details">
       <div className="pitch-header">
-        <button className="pitch-back-btn" onClick={onBack}>
-          <span>◀</span>
-          <span>BACK</span>
-        </button>
         <div className="pitch-title">
           <span className="pitch-title-big">ANOMALY STUDIO</span>
           <span className="pitch-title-sub">INTERACTIVE PITCH DECK</span>
         </div>
-        <div style={{ width: "140px" }}></div>
       </div>
 
       <div className="pitch-content">
@@ -1443,7 +1438,6 @@ function PitchApp() {
               </div>
 
               <PitchDetails
-                onBack={() => setState("pitch-hero")}
                 onAuction={() => setState("auction")}
                 onVision={() => setState("pitch-vision")}
                 onCoreLoop={() => setState("pitch-coreloop")}
