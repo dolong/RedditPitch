@@ -1212,3 +1212,47 @@ body.is-mobile .controls {
   left: 8px;
   max-width: calc(100vw - 16px);
 }
+
+/* ────────────────────────────────────────────────
+   Desktop-only close X + suppressed nav
+   On desktop (body:not(.is-mobile)) hide the back/next/footer/overview
+   buttons and show a single "×" button top-left that returns to overview.
+   ──────────────────────────────────────────────── */
+
+.pitch-close-x {
+  display: none;
+}
+
+body:not(.is-mobile) .pitch-close-x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid var(--c-left, #19e6c4);
+  color: var(--c-left, #19e6c4);
+  font-family: var(--f-head, "Orbitron", sans-serif);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 100;
+  transition: background 0.15s ease, color 0.15s ease;
+  padding: 0;
+}
+
+body:not(.is-mobile) .pitch-close-x:hover {
+  background: var(--c-left, #19e6c4);
+  color: var(--c-bg, #02060a);
+}
+
+body:not(.is-mobile) .pitch-overview-btn,
+body:not(.is-mobile) .pitch-back-btn,
+body:not(.is-mobile) .pitch-footer-nav {
+  display: none !important;
+}

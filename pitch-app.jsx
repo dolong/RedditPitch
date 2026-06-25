@@ -135,6 +135,9 @@ function PitchHeader({ titleBig, titleSub, onBack, onOverview, onNext }) {
   return (
     <div className="pitch-header">
       {onOverview && (
+        <button className="pitch-close-x" onClick={onOverview} aria-label="Back to overview">×</button>
+      )}
+      {onOverview && (
         <button className="pitch-overview-btn" onClick={onOverview}>BACK TO OVERVIEW</button>
       )}
       <div className="pitch-header-row">
@@ -1234,24 +1237,6 @@ function PitchDetails({ onAuction, onVision, onCoreLoop, onMonetization, onMarke
           </div>
         </div>
 
-        {/* Card 4: Market Opportunity — CLICKABLE */}
-        <div className="pitch-card" onClick={onMarketOpportunity} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">📊 MARKET OPPORTUNITY</div>
-          <div className="pitch-card-body">
-            <span style={{ color: "var(--c-ink)" }}>We're tracking <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>48</span> active games on Reddit. Just the popular tier alone:</span>
-            <br /><br />
-            <span style={{ color: "var(--c-ink)" }}>
-              <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>1,397,209</span> weekly active users across tracked titles
-              <br />
-              <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>531,931</span> weekly contributions (votes, posts, plays — not passive scrolling)
-              <br />
-              <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>38.1%</span> platform-wide engagement rate (contributions ÷ WAU). On mobile F2P, 5–10% is industry standard. This is <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>4–8x</span> higher.
-            </span>
-          </div>
-          <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
-            CLICK TO EXPLORE →
-          </div>
-        </div>
 
         {/* Card 5: AI Difference — CLICKABLE */}
         <div className="pitch-card" onClick={onLivingEconomy} style={{ cursor: "pointer" }}>
@@ -1287,38 +1272,7 @@ function PitchDetails({ onAuction, onVision, onCoreLoop, onMonetization, onMarke
           </div>
         </div>
 
-        {/* Card 7: The Roadmap — CLICKABLE */}
-        <div className="pitch-card" onClick={onRoadmap} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">📅 THE ROADMAP</div>
-          <div className="pitch-card-body">
-            <strong style={{ color: "var(--c-ink)" }}>Five quarters to category leadership.</strong> Build the infrastructure and tools (Q3 2026), launch flagship titles (Q4 2026), compound with a portfolio of hits (Q1 2027), open to third-party studios (Q2 2027), and become Reddit's publisher of record by Q2 2028.
-          </div>
-          <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
-            CLICK TO EXPLORE →
-          </div>
-        </div>
 
-        {/* Card 8: Live Demo */}
-        <div className="pitch-card">
-          <div className="pitch-card-title">👾 LIVE DEMO</div>
-          <div className="pitch-card-body">
-            Experience the <strong>auction house in action</strong>. See how players bid on legendary pilots in real time with our live bidding interface.
-            <br /><br />
-            <button onClick={onAuction} style={{
-              appearance: "none",
-              border: "1px solid var(--c-left)",
-              background: "rgba(25, 230, 196, 0.1)",
-              color: "var(--c-left)",
-              padding: "10px 20px",
-              cursor: "pointer",
-              font: "700 14px var(--f-head)",
-              letterSpacing: "0.1em",
-              marginTop: "8px",
-            }}>
-              ENTER AUCTION HOUSE →
-            </button>
-          </div>
-        </div>
       </div>
 
       <div className="pitch-footer">
@@ -1647,7 +1601,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <FounderPage onBack={() => setState("pitch-living-economy")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-roadmap")} nextTitle="ROADMAP" />
+              <FounderPage onBack={() => setState("pitch-living-economy")} onOverview={() => setState("pitch-details")} />
             </>
           )}
 
@@ -1676,7 +1630,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <AIDifferencePage onBack={() => setState("pitch-market")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-founder")} nextTitle="THE FOUNDER" />
+              <AIDifferencePage onBack={() => setState("pitch-monetization")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-founder")} nextTitle="THE FOUNDER" />
             </>
           )}
 
@@ -1734,7 +1688,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <MonetizationPage onBack={() => setState("pitch-coreloop")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-market")} nextTitle="MARKET OPPORTUNITY" />
+              <MonetizationPage onBack={() => setState("pitch-coreloop")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-living-economy")} nextTitle="LIVING WORLDS" />
             </>
           )}
 
