@@ -233,6 +233,163 @@
   font-style: italic;
 }
 
+/* ── Shared content bits (media frames, metrics, tables, steps) ── */
+.pitch-media {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(25, 230, 196, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pitch-caption {
+  margin-top: 12px;
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+  color: rgba(234, 246, 243, 0.7);
+}
+
+/* A row of clips with different source aspect ratios: every stage is the same
+   height and the clip is centred inside it, so nothing is cropped or stretched. */
+.pitch-media-cell {
+  border: 1px solid rgba(25, 230, 196, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #02060a;
+}
+.pitch-media-stage {
+  height: 420px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+body.is-mobile .pitch-media-stage { height: auto; width: 100%; }
+body.is-mobile .pitch-media-stage video { height: auto !important; width: 100% !important; }
+body.is-mobile .pitch-video-crop.pitch-media-stage video { height: 100% !important; width: 166.6667% !important; }
+
+.pitch-media-label {
+  padding: 8px 12px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-left);
+  border-top: 1px solid rgba(25, 230, 196, 0.15);
+}
+
+.pitch-note {
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(234, 246, 243, 0.7);
+}
+
+/* An investor question quoted back before it gets answered. */
+.pitch-question {
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.55;
+  font-style: italic;
+  color: rgba(234, 246, 243, 0.7);
+}
+
+/* "IN PRACTICE — …" divider label */
+.pitch-sublabel {
+  font-family: var(--f-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--c-left);
+}
+
+.pitch-cta {
+  margin-top: 8px;
+  color: var(--c-left);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* Metric tiles */
+.pitch-metrics { display: grid; gap: 12px; }
+.pitch-metric {
+  border: 1px solid rgba(25, 230, 196, 0.25);
+  background: rgba(25, 230, 196, 0.06);
+  padding: 12px 14px;
+}
+.pitch-metric-value {
+  font-family: var(--f-head);
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1.05;
+  color: var(--c-left);
+  text-shadow: 0 0 12px rgba(25, 230, 196, 0.35);
+}
+.pitch-metric-label {
+  margin-top: 6px;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-ink-dim);
+}
+
+/* Scenario table */
+.pitch-table {
+  display: grid;
+  border: 1px solid rgba(25, 230, 196, 0.25);
+  font-family: var(--f-body);
+  font-size: 15px;
+}
+.pitch-table-row { display: grid; grid-template-columns: 1.7fr 0.9fr 0.9fr 1.2fr; }
+.pitch-table-row + .pitch-table-row { border-top: 1px solid rgba(25, 230, 196, 0.15); }
+.pitch-table-row > div { padding: 10px 12px; color: var(--c-ink); }
+.pitch-table-head > div {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-left);
+  background: rgba(25, 230, 196, 0.08);
+}
+.pitch-table-row.is-base { background: rgba(25, 230, 196, 0.07); }
+.pitch-table-row.is-base > div { color: var(--c-left); font-weight: 600; }
+.pitch-cell-label { display: none; }
+
+/* Pull quote */
+.pitch-quote {
+  border-left: 3px solid var(--c-left);
+  padding: 6px 0 6px 16px;
+  font-family: var(--f-display);
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--c-ink);
+}
+
+/* Step / loop blocks */
+.pitch-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pitch-step {
+  border: 1px solid rgba(25, 230, 196, 0.22);
+  background: rgba(2, 6, 10, 0.6);
+  padding: 16px;
+}
+.pitch-step-title {
+  font-family: var(--f-head);
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: var(--c-left);
+  margin-bottom: 8px;
+}
+.pitch-step-body {
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--c-ink);
+}
+
 .pitch-footer {
   display: flex;
   justify-content: space-between;
@@ -294,6 +451,32 @@ body.is-mobile .pitch-content .pitch-video-crop video {
   max-width: none;
   height: 100%;
 }
+
+/* ────────────────────────────────────────────────
+   Desktop type scale — on the 1920×1080 stage every
+   size above runs 25% larger. The mobile shell
+   (body.is-mobile) keeps the base sizes.
+   ──────────────────────────────────────────────── */
+body:not(.is-mobile) .pitch-hero-sub      { font-size: 40px; }
+body:not(.is-mobile) .pitch-hero-cta      { font-size: 25px; }
+body:not(.is-mobile) .pitch-title-big     { font-size: 45px; }
+body:not(.is-mobile) .pitch-title-sub     { font-size: 14px; }
+body:not(.is-mobile) .pitch-card-title    { font-size: 35px; }
+body:not(.is-mobile) .pitch-card-body     { font-size: 20px; }
+body:not(.is-mobile) .pitch-caption       { font-size: 16px; }
+body:not(.is-mobile) .pitch-media-label   { font-size: 14px; }
+body:not(.is-mobile) .pitch-note          { font-size: 16px; }
+body:not(.is-mobile) .pitch-question      { font-size: 19px; }
+body:not(.is-mobile) .pitch-sublabel      { font-size: 18px; }
+body:not(.is-mobile) .pitch-cta           { font-size: 15px; }
+body:not(.is-mobile) .pitch-metric-value  { font-size: 38px; }
+body:not(.is-mobile) .pitch-metric-label  { font-size: 13px; }
+body:not(.is-mobile) .pitch-table         { font-size: 19px; }
+body:not(.is-mobile) .pitch-table-head > div { font-size: 13px; }
+body:not(.is-mobile) .pitch-quote         { font-size: 24px; }
+body:not(.is-mobile) .pitch-step-title    { font-size: 21px; }
+body:not(.is-mobile) .pitch-step-body     { font-size: 19px; }
+body:not(.is-mobile) .pitch-footer        { font-size: 15px; }
 
 /* ────────────────────────────────────────────────
    Responsive — pitch screens on the mobile shell
@@ -368,6 +551,31 @@ body.is-mobile .pitch-overview-btn {
 body.is-mobile .pitch-card { padding: 18px; }
 body.is-mobile .pitch-card-title { font-size: 21px; }
 body.is-mobile .pitch-card-body { font-size: 15px; }
+
+/* Metrics / steps / tables collapse on the mobile shell */
+body.is-mobile .pitch-metrics { grid-template-columns: 1fr 1fr !important; }
+body.is-mobile .pitch-metric { padding: 10px 12px; }
+body.is-mobile .pitch-metric-value { font-size: 24px; }
+body.is-mobile .pitch-steps { grid-template-columns: 1fr !important; }
+body.is-mobile .pitch-quote { font-size: 17px; padding-left: 12px; }
+
+body.is-mobile .pitch-table-head { display: none; }
+body.is-mobile .pitch-table-row { grid-template-columns: 1fr; padding: 6px 0; }
+body.is-mobile .pitch-table-row > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 5px 12px;
+}
+body.is-mobile .pitch-cell-label {
+  display: inline;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-ink-dim);
+}
 
 /* Media never overflows its column */
 body.is-mobile .pitch-content img,

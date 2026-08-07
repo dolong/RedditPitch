@@ -112,7 +112,7 @@ function PitchHero({ onStart }) {
         height: "auto",
         filter: "drop-shadow(0 0 20px rgba(25, 230, 196, 0.3))",
       }} />
-      <div className="pitch-hero-sub">Reddit Games Pipeline</div>
+      <div className="pitch-hero-sub">Reddit Updates</div>
       <button className="pitch-hero-cta" onClick={onStart}>
         ENTER PITCH
       </button>
@@ -122,14 +122,13 @@ function PitchHero({ onStart }) {
 
 // ─── Section order + shared header ────────────────────────
 const SECTION_ORDER = [
-  "pitch-vision",
-  "pitch-coreloop",
-  "pitch-monetization",
-  "pitch-market",
-  "pitch-living-economy",
-  "pitch-founder",
-  "pitch-roadmap",
+  "pitch-vision",         // Vision
+  "pitch-coreloop",       // Farnsworth
+  "pitch-monetization",   // Catalog Economics
+  "pitch-living-economy", // Living Worlds
 ];
+// Hidden: pitch-founder (The Team), pitch-market, pitch-reddit-strategy, pitch-roadmap —
+// their pages remain in source but nothing navigates to them.
 
 function PitchHeader({ titleBig, titleSub, onBack, onOverview, onNext }) {
   return (
@@ -183,133 +182,139 @@ function PitchFooterNav({ onBack, onNext, nextTitle }) {
   );
 }
 
-// ─── Vision Page ───────────────────────────────────────────
-function VisionPage({ onBack, onOverview, onNext, nextTitle }) {
+// ─── Catalog Page ──────────────────────────────────────────
+function CatalogPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
       <PitchHeader titleBig="VISION" titleSub="GAMING ON REDDIT" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
-        {/* Left column: Image */}
-        <div>
-          <div style={{
-            background: "rgba(0,0,0,0.3)",
-            borderRadius: "8px",
-            overflow: "hidden",
-            border: "1px solid rgba(25, 230, 196, 0.2)",
-            maxHeight: "800px",
-          }}>
-            <img src="GamesOnReddit.png" alt="r/GamesOnReddit" style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-            }} />
-          </div>
-          <div style={{
-            marginTop: "12px",
-            fontSize: "13px",
-            color: "rgba(234, 246, 243, 0.7)",
-            lineHeight: "1.5",
-            fontStyle: "italic",
-          }}>
-            r/GamesOnReddit is a free marketing sub for new Reddit games with top games easily topping 50k WAU
+        {/* Left column: distribution proof */}
+        <div style={{ display: "grid", gap: "24px" }}>
+          <div>
+            <div className="pitch-media">
+              <img src="GamesOnReddit.png" alt="r/GamesOnReddit" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div className="pitch-caption">
+              r/GamesOnReddit is free distribution for new Reddit games — top titles clear 50K weekly users with no paid marketing.
+            </div>
           </div>
         </div>
 
-        {/* Right column: Content cards */}
+        {/* Right column: content cards */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
           <div className="pitch-card">
-            <div className="pitch-card-title">⚡ THE OPPORTUNITY</div>
+            <div className="pitch-card-title">📊 STATE OF PLAY</div>
             <div className="pitch-card-body">
-              <strong style={{ color: "var(--c-ink)" }}>Reddit has quietly become a native games platform. </strong>
-                Devvit lets developers build interactive games that run directly inside Reddit posts, with Reddit-native identity, 
-                distribution, payments, and community mechanics.
+              <strong>Anomaly is building a revenue-bearing catalog, not betting on one hit.</strong> We launch three games per month.
+              Each qualified title receives a one-time payment and contributes recurring Reddit revenue, while the strongest games layer
+              in-app purchases on top.
+            </div>
+
+            <div className="pitch-metrics" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">3</div>
+                <div className="pitch-metric-label">Games launched / month</div>
+              </div>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">50K</div>
+                <div className="pitch-metric-label">Average DQE per title</div>
+              </div>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">36</div>
+                <div className="pitch-metric-label">Qualified titles in catalog</div>
+              </div>
+            </div>
+
+            <div className="pitch-metrics" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">$180K</div>
+                <div className="pitch-metric-label">Exit MRR</div>
+              </div>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">$2.16M</div>
+                <div className="pitch-metric-label">Annualized run-rate, before IAP</div>
+              </div>
+            </div>
+
+            <div className="pitch-note">DQE = Daily Qualified Engager, the unit Reddit pays platform revenue against.</div>
+          </div>
+
+          <div className="pitch-card">
+            <div className="pitch-card-title">🧮 THE BASE MODEL</div>
+            <div className="pitch-card-body">
+              At a scenario average of 50K DQE across 36 qualified titles, the catalog reaches:
               <br /><br />
-              <span style={{ color: "var(--c-ink)" }}>
-                <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>48</span> tracked native games. <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>1.4M</span> weekly active users. <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>532K</span> weekly contributions. A solo developer just hit <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>414,000</span> weekly players in 8 months — without spending a dollar on marketing. The average game on the platform converts <span style={{ fontSize: "20px", fontWeight: "900", color: "var(--c-left)" }}>38%</span> of its players into active contributors every week, four to eight times higher than mobile.
-              </span>
-              <br /><br />
-              <a href="https://reddit.poweredbynova.ai" target="_blank" rel="noopener noreferrer" 
-              style={{ color: "var(--c-left)", fontWeight: "600", marginLeft: "4px" }}>
-                See our Reddit Games Dashboard, tracking the entire ecosystem in real time
-              </a>
-              <br /><br />
-              <strong style={{ color: "var(--c-ink)" }}>The infrastructure is already there:</strong> <span style={{ color: "var(--c-ink)" }}>420M monthly Redditors. A developer platform (Devvit) that runs code natively inside posts. Identity, payments, and distribution built in. Zero app store friction.</span>
-              <br /><br />
-              <strong style={{ color: "var(--c-ink)" }}>Anomaly is building the Reddit Games Pipeline</strong> <span style={{ color: "var(--c-ink)" }}>— a framework, a data layer, and a first-party portfolio that turns this moment into a publishing house. Reddit's killer app is games. We're going to prove it, and we're going to own it.</span>
+              • <strong>$180K</strong> exit MRR
+              <br />
+              • <strong>$2.16M</strong> annualized exit run-rate before IAP
+              <br />
+              • <strong>$144K</strong> in cumulative one-time payments, assuming $4K per qualified title
+              <br />
+              • <strong>$90K</strong> exit MRR if only half the titles qualify at that level
             </div>
           </div>
 
           <div className="pitch-card">
-            <div className="pitch-card-title">🎮 FIRST TITLES</div>
+            <div className="pitch-card-title">🔁 THE ANOMALY ADVANTAGE</div>
             <div className="pitch-card-body">
-              <strong>Multiverse Basketball Association</strong> — Pixel-art esports. Collect pilots, build rosters, compete in 1v1 matches with live auctions.
-              <br /><br />
-              <strong>Don't Die</strong> — Arcade roguelike. Real-time survival gameplay, leaderboards, seasonal runs.
-              <br /><br />
-              <strong>Scoop City</strong> — Ice Cream Shop Sim. Time management meets Reddit virality. Create and share your wackiest sundaes. Real life geo features resembling Pokemon Go.
-              <br /><br />
-              Designed to be natively shareable, virally engaging, and monetizable through Reddit's existing systems.
+              Three games a month. Each launch adds revenue to the catalog <em>and</em> production intelligence to Farnsworth.
             </div>
 
-            <div style={{
-              marginTop: "16px",
-              borderRadius: "8px",
-              overflow: "hidden",
-              border: "1px solid rgba(25, 230, 196, 0.2)",
-              background: "#02060a",
-            }} className="pitch-video-half">
-              {/* Crop 20% off the left and right of the source video.
-                  Source is 640x360; cropped frame is 384x360. */}
-              <div className="pitch-video-crop" style={{
-                position: "relative",
-                width: "100%",
-                aspectRatio: "384 / 360",
-                overflow: "hidden",
-              }}>
-                <video
-                  src="assets/dailyrun.mov"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="none"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: "-33.3333%",
-                    width: "166.6667%",
-                    height: "100%",
-                    display: "block",
-                  }}
-                />
+            <div className="pitch-steps">
+              <div className="pitch-step">
+                <div className="pitch-step-title">CATALOG REVENUE</div>
+                <div className="pitch-step-body">
+                  Every qualified title adds a one-time payment plus recurring Reddit revenue, with IAP layered onto the strongest games.
+                </div>
               </div>
-              <div style={{
-                padding: "8px 12px",
-                fontFamily: "var(--f-mono)",
-                fontSize: "11px",
-                letterSpacing: "0.18em",
-                color: "var(--c-left)",
-                borderTop: "1px solid rgba(25, 230, 196, 0.15)",
-                textTransform: "uppercase",
-              }}>
-                Don't Die — Daily Run
+              <div className="pitch-step">
+                <div className="pitch-step-title">PRODUCTION INTELLIGENCE</div>
+                <div className="pitch-step-body">
+                  Every title leaves behind reusable code, tests, workflows, and player learnings, so the next one starts further ahead.
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="pitch-card">
-            <div className="pitch-card-title">💡 WHY REDDIT WORKS FOR GAMES</div>
-            <div className="pitch-card-body">
-              <strong style={{ color: "var(--c-ink)" }}>Frictionless distribution:</strong> <span style={{ color: "var(--c-ink)" }}>A great game spawns a great post. A great post lands on r/all. r/all is free marketing.</span>
-              <br /><br />
-              <span style={{ color: "var(--c-ink)" }}>Bunny Trials hit <span style={{ fontSize: "24px", fontWeight: "900", color: "var(--c-left)" }}>414K</span> weekly users in 8 months. Color Puzzle: <span style={{ fontSize: "24px", fontWeight: "900", color: "var(--c-left)" }}>120K</span> in 4 months. Pixelary: <span style={{ fontSize: "24px", fontWeight: "900", color: "var(--c-left)" }}>67K</span> with 95.5% of players actively posting back into the feed. None of these games spent on user acquisition — the post is the game is the ad.</span>
-              <br /><br />
-              <span style={{ color: "var(--c-ink)" }}>Across 48 tracked Devvit games, average engagement is <span style={{ fontSize: "24px", fontWeight: "900", color: "var(--c-left)" }}>38.1%</span> (contributions ÷ WAU). Mobile F2P industry standard is 5–10%. Every player is also a content creator — every game session is itself a viral unit.</span>
-              <br /><br />
-              <strong style={{ color: "var(--c-ink)" }}>Cold-start solved:</strong> <span style={{ color: "var(--c-ink)" }}>24 of the 48 games we track launched in 2026 alone — half the ecosystem is less than 5 months old. There is no early-mover penalty here. Devvit is still bootstrapping its catalog. The studio that ships 2–3 hits in the next 12 months is locked in for the cycle.</span>
-              <br /><br />
-              <strong style={{ color: "var(--c-ink)" }}>Time-to-traction is collapsed:</strong> <span style={{ color: "var(--c-ink)" }}>On mobile, a new title typically needs $100K+ in UA to reach 50K MAU. On Reddit, Designer Eye reached 4.7K WAU in 57 days with no marketing. MiniGawf hit 49K WAU in 68 days. The dev cost is the only real cost.</span>
+            {/* Two of the titles already in the catalog. Both source clips are
+                640x360; the crop shows the middle 60% (384x360). */}
+            <div className="pitch-steps" style={{ marginTop: "4px" }}>
+              {[
+                { src: "assets/dailyrun.mov", label: "Don't Die — Daily Run" },
+                { src: "assets/MBAClip.mov", label: "Multiverse Basketball Association" },
+              ].map((clip) => (
+                <div key={clip.src} style={{
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                  border: "1px solid rgba(25, 230, 196, 0.2)",
+                  background: "#02060a",
+                }}>
+                  <div className="pitch-video-crop" style={{
+                    position: "relative",
+                    width: "100%",
+                    aspectRatio: "384 / 360",
+                    overflow: "hidden",
+                  }}>
+                    <video
+                      src={clip.src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="none"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: "-33.3333%",
+                        width: "166.6667%",
+                        height: "100%",
+                        display: "block",
+                      }}
+                    />
+                  </div>
+                  <div className="pitch-media-label">{clip.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -513,50 +518,61 @@ function RoadmapPage({ onBack, onOverview, onNext, nextTitle }) {
   );
 }
 
-// ─── Founder Page ──────────────────────────────────────────
-function FounderPage({ onBack, onOverview, onNext, nextTitle }) {
+// ─── Team Page ─────────────────────────────────────────────
+function TeamPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
-      <PitchHeader titleBig="THE FOUNDER" titleSub="LONG DO" onBack={onBack} onOverview={onOverview} onNext={onNext} />
+      <PitchHeader titleBig="THE TEAM" titleSub="TRACK RECORD" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "400px 1fr", gap: "24px", alignItems: "start" }}>
         {/* Left column: Photo */}
         <div>
-          <div style={{
-            background: "rgba(0,0,0,0.3)",
-            borderRadius: "8px",
-            overflow: "hidden",
-            border: "1px solid rgba(25, 230, 196, 0.2)",
-            maxHeight: "600px",
-          }}>
-            <img src="long-do-photo.jpg" alt="Long Do" style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-            }} />
+          <div className="pitch-media">
+            <img src="long-do-photo.jpg" alt="Long Do" style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
+          <div className="pitch-caption">Long Do — founder, Anomaly.</div>
         </div>
 
         {/* Right column: Content */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
           <div className="pitch-card">
-            <div className="pitch-card-title">👤 LONG DO</div>
+            <div className="pitch-card-title">📦 WHAT THE TEAM HAS SHIPPED</div>
             <div className="pitch-card-body">
-              <strong style={{ color: "var(--c-ink)" }}>A decade of shipping hits as an indie developer.</strong>
-              <br /><br />
-              <span style={{ color: "var(--c-ink)" }}>10+ shipped titles. $50K–$2M acquisitions. Built without teams, without publishers, against 30% app store cuts.</span>
-              <br /><br />
-              <strong style={{ color: "var(--c-ink)" }}>Long Do is a repeat founder with multiple successful exits</strong> <span style={{ color: "var(--c-ink)" }}>and investment from leading names including a16z and Kevin O'Leary. He brings deep technical expertise through dual degrees in Computer Science and Information Technology.</span>
-              <br /><br />
-              <strong style={{ color: "var(--c-ink)" }}>Two forces have just compressed the math:</strong>
-              <br /><br />
-              <span style={{ color: "var(--c-ink)" }}>
-                • <strong>AI</strong> turns a 12-month build into a 3-month ship
-                <br />
-                • <strong>Reddit</strong> removes every distribution and monetization tax that used to slow indies down
-              </span>
-              <br /><br />
-              <span style={{ color: "var(--c-ink)" }}>The model that worked for one developer building one game at a time now works for one developer building ten at a time, on the platform with the lowest friction in gaming history.</span>
+              <strong>Over 12 titles in the last two years, averaging $50–100K in revenue per title shipped.</strong>
+              {" "}Anomaly is a team of experts in emerging casual, bite-sized games — the exact shape of game that qualifies on Reddit.
+            </div>
+
+            <div className="pitch-metrics" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">12+</div>
+                <div className="pitch-metric-label">Titles shipped, 2 years</div>
+              </div>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">$50–100K</div>
+                <div className="pitch-metric-label">Average revenue per title</div>
+              </div>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">500K</div>
+                <div className="pitch-metric-label">Peak weekly users, Sword &amp; Supper</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="pitch-card">
+            <div className="pitch-card-title">👤 LONG DO — FOUNDER</div>
+            <div className="pitch-card-body">
+              <strong>Repeat founder with multiple successful exits</strong> and investment from leading names including a16z and Kevin O'Leary.
+              A decade of shipping as an indie developer: 10+ titles built without teams, without publishers, against 30% app store cuts.
+              Dual degrees in Computer Science and Information Technology.
+            </div>
+          </div>
+
+          <div className="pitch-card">
+            <div className="pitch-card-title">🗡️ MARGARET — LEAD GAME DESIGNER</div>
+            <div className="pitch-card-body">
+              <strong>Margaret concepted the first monetizable game built with Reddit directly: Sword &amp; Supper.</strong>
+              {" "}500K peak weekly users, 82K weekly users as of July 2026, and proven IAP — the upper-tail case for what a qualified
+              title on this platform can become.
             </div>
           </div>
         </div>
@@ -571,55 +587,42 @@ function FounderPage({ onBack, onOverview, onNext, nextTitle }) {
     </div>
   );
 }
-function AIDifferencePage({ onBack, onOverview, onNext, nextTitle }) {
+// ─── Living Worlds Page ────────────────────────────────────
+function SubsectionLabel({ children }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: "16px", marginTop: "8px" }}>
+      <div style={{ height: "1px", flex: "0 0 40px", background: "var(--c-left)" }}></div>
+      <span className="pitch-sublabel">{children}</span>
+      <div style={{ height: "1px", flex: "1", background: "rgba(25, 230, 196, 0.2)" }}></div>
+    </div>
+  );
+}
+
+function LivingWorldsPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
-      <PitchHeader titleBig="LIVING WORLDS" titleSub="AI AGENTS NATIVE TO REDDIT" onBack={onBack} onOverview={onOverview} onNext={onNext} />
+      <PitchHeader titleBig="AGENTIC LIVEOPS" titleSub="REUSABLE SYSTEMS, NOT ONE-OFF FEATURES" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "1fr", gap: "24px" }}>
-        {/* Opening: AI Agents embedded into Reddit */}
+        {/* Opening: agentic systems as gaming ops */}
         <div className="pitch-card">
-          <div className="pitch-card-title">🤖 MEANINGFUL AI SYSTEMS IN REDDIT</div>
+          <div className="pitch-card-title">🤖 A SCALABLE GAMING OPS SYSTEM</div>
           <div className="pitch-card-body">
-            <strong style={{ color: "var(--c-ink)" }}>Most studios bolt AI on as a feature. 
-              Clearly labeled AI opponents and game agents keep worlds active from day one. They can generate daily challenges, fill matchmaking queues, participate in in-game auctions, 
-              and create replayable content loops — without pretending to be human users or manipulating Reddit votes.</strong> <span style={{ color: "var(--c-ink)" }}>— autonomous participants embedded directly in the feed, the comments, and the game economy.</span>
+            <strong>Agentic systems built into Farnsworth, plus analytics add-ons, create a scalable gaming ops system</strong> —
+            generating daily challenges, filling matchmaking queues, participating in in-game auctions, and creating replayable content
+            loops.
             <br /><br />
-            <span style={{ color: "var(--c-ink)" }}>
-              Create content, posts, content — seeding activity, filling matchmaking, and keeping every community alive from day one.</span>
-            <br /><br />
-            <strong style={{ color: "var(--c-ink)" }}>The result:</strong> <span style={{ color: "var(--c-ink)" }}>a game world that never feels empty, and a content engine that runs itself. Our AI difference isn't a smarter NPC — it's an always-on population native to the platform.</span>
+            These are Farnsworth systems, not per-game features: built once, hardened once, then reused across the catalog. A game world
+            that never feels empty is a launch requirement, not a nice-to-have.
           </div>
         </div>
 
-        {/* Living Economy subsection label */}
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "16px",
-          marginTop: "8px",
-        }}>
-          <div style={{ height: "1px", flex: "0 0 40px", background: "var(--c-left)" }}></div>
-          <span style={{
-            color: "var(--c-left)",
-            fontSize: "14px",
-            letterSpacing: "0.2em",
-            fontWeight: "700",
-          }}>IN PRACTICE — THE LIVING ECONOMY</span>
-          <div style={{ height: "1px", flex: "1", background: "rgba(25, 230, 196, 0.2)" }}></div>
-        </div>
+        <SubsectionLabel>IN PRACTICE</SubsectionLabel>
 
-        {/* Living Economy: video + content cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
-          {/* Left column: Video */}
-          <div>
-            <div style={{
-              borderRadius: "8px",
-              overflow: "hidden",
-              border: "1px solid rgba(25, 230, 196, 0.2)",
-              position: "relative",
-              height: "600px",
-            }}>
+        {/* The three systems running inside shipped titles. */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px", alignItems: "start" }}>
+          <div className="pitch-media-cell">
+            <div className="pitch-media-stage">
               <video
                 src="living-economy-demo.mp4"
                 autoPlay
@@ -627,203 +630,41 @@ function AIDifferencePage({ onBack, onOverview, onNext, nextTitle }) {
                 muted
                 playsInline
                 controls
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                }}
+                style={{ height: "100%", width: "auto", display: "block" }}
               />
             </div>
+            <div className="pitch-media-label">Living economy — agent-run auctions</div>
           </div>
 
-          {/* Right column: Content cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
-            <div className="pitch-card">
-              <div className="pitch-card-title">🤖 WHAT IS A LIVING ECONOMY?</div>
-              <div className="pitch-card-body">
-                <strong>The hardest problem in games isn't building a world — it's keeping it alive after launch.</strong> Scripted economies go stale; players churn.
-                <br /><br />
-                <strong>Anomaly has a living economy:</strong> Admin AI Assisted controlled agents that think, bid, scout, and adapt in real time. They have unique rosters, bidding strategies, and personalities. They're not just opponents — they're market participants, price makers, and ecosystem participants.
-                <br /><br />
-                <strong>What this means:</strong> Every day the economy looks different. New meta emerges. New opportunities surface. The world feels alive.
-              </div>
+          <div className="pitch-media-cell">
+            {/* Tall capture — anchored to the top so the headline metrics and the
+                activity chart stay legible at column width. */}
+            <div className="pitch-media-stage" style={{ width: "100%" }}>
+              <img
+                src="liveops-live.png"
+                alt="Farnsworth Live — weekly users, contributions, activity over time, and community insights for The Last Draft"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+              />
             </div>
-
-            <div className="pitch-card">
-              <div className="pitch-card-title">🏆 RANKED LADDER WITH AGENTS</div>
-              <div className="pitch-card-body">
-                <strong>Queue System:</strong> Players are matched against ranked opponents based on their player roster strength AND agent rosters.
-                <br /><br />
-                <strong>Agent Variety:</strong> Different agents have different strategies:
-                <br />
-                • Aggressive bidders who drive auction prices
-                <br />
-                • Scout agents who discover undervalued pilots
-                <br /><br />
-                <strong>Solving Cold Start:</strong> Day 1, new players draft a starter roster, queue matches against agents, win gold, bid in auctions, and climb the leaderboard — a thriving ecosystem with competitive matches, an active auction market, and meaningful progression from the very first session.
-              </div>
-            </div>
-
-            <div className="pitch-card">
-              <div className="pitch-card-title">💎 MARKET MAKING VIA AGENTS</div>
-              <div className="pitch-card-body">
-                <strong>Liquidity on demand:</strong> Agents always bid if prices drop too low
-                <br />
-                <strong>Price stability:</strong> Agents dampen extreme volatility
-                <br />
-                <strong>Player confidence:</strong> Market depth feels real
-                <br />
-                <strong>Natural progression:</strong> Agents sell inventory as players climb ranks
-              </div>
-            </div>
+            <div className="pitch-media-label">Farnsworth Live — analytics &amp; community insights</div>
           </div>
-        </div>
 
-        {/* Don't Die — daily roguelike subsection label */}
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "16px",
-          marginTop: "8px",
-        }}>
-          <div style={{ height: "1px", flex: "0 0 40px", background: "var(--c-left)" }}></div>
-          <span style={{
-            color: "var(--c-left)",
-            fontSize: "14px",
-            letterSpacing: "0.2em",
-            fontWeight: "700",
-          }}>IN PRACTICE — DON'T DIE: DAILY ROGUELIKE</span>
-          <div style={{ height: "1px", flex: "1", background: "rgba(25, 230, 196, 0.2)" }}></div>
-        </div>
-
-        {/* Don't Die: video + content card */}
-        <div style={{ display: "grid", gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
-          {/* Left column: Don't Die — Daily Run */}
-          <div style={{
-            borderRadius: "8px",
-            overflow: "hidden",
-            border: "1px solid rgba(25, 230, 196, 0.2)",
-            background: "#02060a",
-          }}>
-            {/* Crop 20% off the left and right of the source video (640x360 -> 384x360). */}
-            <div className="pitch-video-crop" style={{
-              position: "relative",
-              width: "100%",
-              aspectRatio: "384 / 360",
-              overflow: "hidden",
-            }}>
+          <div className="pitch-media-cell">
+            <div className="pitch-media-stage">
               <video
-                src="assets/dailyrun.mov"
+                src="assets/scoopcity.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
                 preload="none"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: "-33.3333%",
-                  width: "166.6667%",
-                  height: "100%",
-                  display: "block",
-                }}
+                style={{ height: "100%", width: "auto", display: "block" }}
               />
             </div>
-            <div style={{
-              padding: "8px 12px",
-              fontFamily: "var(--f-mono)",
-              fontSize: "11px",
-              letterSpacing: "0.18em",
-              color: "var(--c-left)",
-              borderTop: "1px solid rgba(25, 230, 196, 0.15)",
-              textTransform: "uppercase",
-            }}>
-              Don't Die — Daily Run
-            </div>
-          </div>
-
-          {/* Right column: Content card */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
-            <div className="pitch-card">
-              <div className="pitch-card-title">🗡️ AGENT-GENERATED DAILY CHALLENGES</div>
-              <div className="pitch-card-body">
-                <strong style={{ color: "var(--c-ink)" }}>A deck-building roguelike in the Slay the Spire tradition — but the runs build themselves.</strong>
-                <br /><br />
-                <span style={{ color: "var(--c-ink)" }}>An AI agent auto-generates a fresh daily challenge — new map, enemies, relics, and modifiers — and posts it straight to Reddit as a playable post. Every day is a new seed, a new leaderboard, a new conversation.</span>
-                <br /><br />
-                <strong style={{ color: "var(--c-ink)" }}>Why it works:</strong> <span style={{ color: "var(--c-ink)" }}>The content engine never sleeps and never runs dry. Players return daily to chase the same seed, compare runs in the comments, and the post itself is the distribution.</span>
-              </div>
-            </div>
+            <div className="pitch-media-label">Scoop City — real-world data feeds</div>
           </div>
         </div>
 
-        {/* Dynamic data game subsection label */}
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "16px",
-          marginTop: "8px",
-        }}>
-          <div style={{ height: "1px", flex: "0 0 40px", background: "var(--c-left)" }}></div>
-          <span style={{
-            color: "var(--c-left)",
-            fontSize: "14px",
-            letterSpacing: "0.2em",
-            fontWeight: "700",
-          }}>IN PRACTICE — REAL-WORLD DYNAMIC DATA</span>
-          <div style={{ height: "1px", flex: "1", background: "rgba(25, 230, 196, 0.2)" }}></div>
-        </div>
-
-        {/* Dynamic data: video + content card */}
-        <div style={{ display: "grid", gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
-          {/* Left column: Scoop City */}
-          <div style={{
-            borderRadius: "8px",
-            overflow: "hidden",
-            border: "1px solid rgba(25, 230, 196, 0.2)",
-            background: "#02060a",
-          }}>
-            <video
-              src="assets/scoopcity.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="none"
-              style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-              }}
-            />
-            <div style={{
-              padding: "8px 12px",
-              fontFamily: "var(--f-mono)",
-              fontSize: "11px",
-              letterSpacing: "0.18em",
-              color: "var(--c-left)",
-              borderTop: "1px solid rgba(25, 230, 196, 0.15)",
-              textTransform: "uppercase",
-            }}>
-              Scoop City
-            </div>
-          </div>
-
-          {/* Right column: Content card */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
-            <div className="pitch-card">
-              <div className="pitch-card-title">🌎 REAL-WORLD DATA AS GAME FUEL</div>
-              <div className="pitch-card-body">
-                <strong style={{ color: "var(--c-ink)" }}>A game world wired directly into reality.</strong>
-                <br /><br />
-                <span style={{ color: "var(--c-ink)" }}>Real-life events, live weather, and real-time data feeds stream in, and an AI agent monitors them to generate dynamic game content — events, conditions, and challenges that mirror what's actually happening in the world.</span>
-                <br /><br />
-                <strong style={{ color: "var(--c-ink)" }}>Why it works:</strong> <span style={{ color: "var(--c-ink)" }}>The game is never the same twice and is impossible to fully script around. A storm rolls through your city, the world reacts. The agent turns the real world into an endless, self-refreshing content pipeline.</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <PitchFooterNav onBack={onBack} onNext={onNext} nextTitle={nextTitle} />
@@ -960,47 +801,140 @@ function MarketOpportunityPage({ onBack, onOverview, onNext, nextTitle }) {
     </div>
   );
 }
-function MonetizationPage({ onBack, onOverview, onNext, nextTitle }) {
+// ─── Catalog Economics Page ────────────────────────────────
+const SCENARIOS = [
+  { name: "50% qualify at 50K DQE", titles: "18", mrr: "$90K", arr: "$1.08M" },
+  { name: "Base scenario", titles: "36", mrr: "$180K", arr: "$2.16M", base: true },
+  { name: "Upper DQE scenarios", titles: "36", mrr: "Up to ~$445K", arr: "Up to ~$5.34M" },
+];
+
+function ScenarioTable() {
+  return (
+    <div className="pitch-table">
+      <div className="pitch-table-row pitch-table-head">
+        <div>Scenario</div>
+        <div>Qualified titles</div>
+        <div>Exit MRR</div>
+        <div>Annualized exit run-rate</div>
+      </div>
+      {SCENARIOS.map((s) => (
+        <div key={s.name} className={`pitch-table-row${s.base ? " is-base" : ""}`}>
+          <div><span className="pitch-cell-label">Scenario</span>{s.name}</div>
+          <div><span className="pitch-cell-label">Qualified titles</span>{s.titles}</div>
+          <div><span className="pitch-cell-label">Exit MRR</span>{s.mrr}</div>
+          <div><span className="pitch-cell-label">Annualized</span>{s.arr}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function EconomicsPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
-      <PitchHeader titleBig="MONETIZATION" titleSub="SUSTAINABLE REVENUE" onBack={onBack} onOverview={onOverview} onNext={onNext} />
+      <PitchHeader titleBig="CATALOG ECONOMICS" titleSub="MULTIPLE WAYS TO WIN" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
       <div className="pitch-content" style={{ gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
-        {/* Left column: Image */}
-        <div>
-          <div style={{
-            background: "rgba(0,0,0,0.3)",
-            borderRadius: "8px",
-            overflow: "hidden",
-            border: "1px solid rgba(25, 230, 196, 0.2)",
-            maxHeight: "700px",
-          }}>
-            <img src="Shop.png" alt="In-Game Shop" style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-            }} />
+        {/* Left column: media */}
+        <div style={{ display: "grid", gap: "24px" }}>
+          <div>
+            <div className="pitch-media">
+              <img src="Shop.png" alt="In-Game Shop" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div className="pitch-caption">
+              IAP is layered onto the strongest titles — cosmetics, premium currency, and pass progression on top of platform revenue.
+            </div>
           </div>
-          <div style={{
-            marginTop: "12px",
-            fontSize: "13px",
-            color: "rgba(234, 246, 243, 0.7)",
-            lineHeight: "1.5",
-            fontStyle: "italic",
-          }}>
-            Our gem shop allows players to purchase cosmetics and battle pass progression
+
+          <div>
+            <div className="pitch-media">
+              <img src="SwordAndSupper.png" alt="Sword & Supper" style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div className="pitch-caption">
+              Sword &amp; Supper — concepted by Margaret on our team, the first monetizable game built with Reddit directly.
+            </div>
           </div>
         </div>
 
-        {/* Right column: Content cards */}
+        {/* Right column: content cards */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
           <div className="pitch-card">
-            <div className="pitch-card-title">🗡️ SWORD & SUPPER — PROVEN ON REDDIT</div>
+            <div className="pitch-card-title">📊 A CATALOG WITH MULTIPLE WAYS TO WIN</div>
+            <ScenarioTable />
+            <div className="pitch-note">
+              All scenarios before IAP. The base model assumes 50K average DQE across 36 qualified titles.
+            </div>
+          </div>
+
+          <div className="pitch-card">
+            <div className="pitch-card-title">➕ ADDITIONAL UPSIDE</div>
             <div className="pitch-card-body">
-              <strong>Designed by Margaret Robertson on our team, Sword & Supper was the first app to monetize on Reddit</strong> — the launch title for Reddit's payment infrastructure and the platform's earliest test of native monetization at scale.
+              • Up to <strong>$7.5K</strong> in one-time program payments per game
+              <br />
+              • <strong>$4K</strong> per qualified title used in the base model
+              <br />
+              • <strong>$144K</strong> in cumulative one-time payments across 36 qualified titles
+              <br />
+              • IAP layered onto the strongest titles
+              <br />
+              • One or two breakout games can materially outperform the base catalog economics
+            </div>
+          </div>
+
+          <div className="pitch-card">
+            <div className="pitch-card-title">♻️ RESHIPPABLE TITLES</div>
+            <div className="pitch-card-body">
+              <strong>Not every launch starts from zero.</strong> Anomaly already owns a back catalog of shipped titles — art, animation,
+              audio, game systems, and validated designs that can be re-cut as Reddit-native games instead of rebuilt.
               <br /><br />
-              It crossed <strong>1M+ subscribers</strong>, generated <strong>six-figure revenue</strong>, and produced Reddit's first real dataset on player conversion, retention, and willingness to pay. Sword & Supper is the proof that this model works — and the foundation we're building on.
-              <br /><br />
+              A reship reuses proven assets and a loop players have already responded to, so it reaches the same qualification bar for a
+              fraction of a ground-up build — and it enters the catalog on the same terms: one-time payment, recurring Reddit revenue,
+              IAP where the title earns it.
+            </div>
+
+            <div className="pitch-steps">
+              <div className="pitch-step">
+                <div className="pitch-step-title">OWNED ASSETS</div>
+                <div className="pitch-step-body">
+                  Existing art, audio, and game systems carry over, so production spend goes to the Reddit layer, not to making a game from scratch.
+                </div>
+              </div>
+              <div className="pitch-step">
+                <div className="pitch-step-title">PROVEN LOOPS</div>
+                <div className="pitch-step-body">
+                  Reshipped titles arrive with real player data behind them — less design risk per slot in the launch calendar.
+                </div>
+              </div>
+            </div>
+
+            <div className="pitch-note">
+              Reships and new builds fill the same three-a-month cadence; the mix is chosen on cost per qualified title.
+            </div>
+          </div>
+
+          <div className="pitch-card">
+            <div className="pitch-card-title">🗡️ THE UPPER TAIL — SWORD &amp; SUPPER</div>
+            <div className="pitch-card-body">
+              <strong>Margaret, Anomaly's leading game designer, concepted the first monetizable game with Reddit directly.</strong>
+              {" "}Sword &amp; Supper is the proof of the upper tail: a single qualified title can outrun the whole base scenario.
+            </div>
+
+            <div className="pitch-metrics" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">500K</div>
+                <div className="pitch-metric-label">Peak weekly users</div>
+              </div>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">82K</div>
+                <div className="pitch-metric-label">Weekly users, July 2026</div>
+              </div>
+              <div className="pitch-metric">
+                <div className="pitch-metric-value">IAP</div>
+                <div className="pitch-metric-label">Proven on platform</div>
+              </div>
+            </div>
+
+            <div className="pitch-card-body">
               <a
                 href="https://www.reddit.com/r/SwordAndSupperGame/"
                 target="_blank"
@@ -1009,35 +943,6 @@ function MonetizationPage({ onBack, onOverview, onNext, nextTitle }) {
               >
                 Play Sword &amp; Supper here →
               </a>
-            </div>
-          </div>
-
-          <div className="pitch-card">
-            <div className="pitch-card-title">💎 PREMIUM CURRENCY MONETIZATION</div>
-            <div className="pitch-card-body">
-              Initial monetization will focus on non-pay-to-win cosmetics, seasonal passes, Reddit Gold purchases, and sponsored collaborations.
-              We will validate ARPU, conversion, and retention across first-party titles before expanding into third-party publishing.
-              <br /><br />
-            </div>
-          </div>
-          <div className="pitch-card">
-            <div className="pitch-card-title">🤝 GRANTS & COLLABORATIONS</div>
-            <div className="pitch-card-body">
-              Reddit's Fund supports virality of games with up to $200k in grants for creating played games. Monetization is early, 
-              but we can start with revenue share on Fund-supported titles and expand into sponsored collaborations with brands and IP holders.
-
-              <br /><br />
-              Reddit is also early in exploring paid attention and analytics services for game developers. We can position Anomaly as a 
-              growth partner for Fund-supported titles, offering paid services to help them optimize their games and scale their audiences.
-            </div>
-          </div>
-
-          <div className="pitch-card">
-            <div className="pitch-card-title">📊 REVENUE PROJECTIONS</div>
-            <div className="pitch-card-body">
-              <strong>Y1:</strong> 10 Games, 50k players each, $400k–600k MRR (Reddit Gold)
-              <br />
-              <strong>Y2+:</strong> 20 Games, 500k players each, $400k–600k MRR (Reddit Gold, Revenue Share with Reddit Attention)
             </div>
           </div>
         </div>
@@ -1052,120 +957,111 @@ function MonetizationPage({ onBack, onOverview, onNext, nextTitle }) {
     </div>
   );
 }
-function CoreLoopPage({ onBack, onOverview, onNext, nextTitle }) {
+function FarnsworthPage({ onBack, onOverview, onNext, nextTitle }) {
   return (
     <div className="pitch-details">
-      <PitchHeader titleBig="REDDIT MECHANICS" titleSub="POSTS ARE GAMES" onBack={onBack} onOverview={onOverview} onNext={onNext} />
+      <PitchHeader titleBig="FARNSWORTH" titleSub="THE PRODUCTION ENGINE BEHIND THE CATALOG" onBack={onBack} onOverview={onOverview} onNext={onNext} />
 
-      <div className="pitch-content" style={{ gridTemplateColumns: "500px 1fr", gap: "24px", alignItems: "start" }}>
-        {/* Left column: Image */}
-        <div>
+      <div className="pitch-content" style={{ gridTemplateColumns: "1fr", gap: "20px", alignItems: "start" }}>
+        {/* Top row: the demo needs the width — it's a screen recording of the
+            tooling, so it gets the larger column and its natural aspect ratio. */}
+        <div style={{ display: "grid", gridTemplateColumns: "1.55fr 1fr", gap: "20px", alignItems: "start" }}>
           <div style={{
-            background: "rgba(0,0,0,0.3)",
             borderRadius: "8px",
             overflow: "hidden",
             border: "1px solid rgba(25, 230, 196, 0.2)",
-            maxHeight: "800px",
+            background: "#02060a",
           }}>
-            <img src="SwordAndSupper.png" alt="Sword & Supper Game" style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-            }} />
+            <video
+              src="farnsworth.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+              }}
+            />
+            <div className="pitch-media-label">Farnsworth — production system</div>
           </div>
-          <div style={{
-            marginTop: "12px",
-            fontSize: "13px",
-            color: "rgba(234, 246, 243, 0.7)",
-            lineHeight: "1.5",
-            fontStyle: "italic",
-          }}>
-            Margaret on our team created Sword & Supper, the first monetized game on Reddit
+
+          <div className="pitch-card">
+            <div className="pitch-card-title">❓ WHY BELIEVE THE CADENCE</div>
+            <div className="pitch-question">
+              "Why should I believe this team can repeatedly ship three qualified games a month without costs rising at the same rate?"
+            </div>
+            <div className="pitch-card-body">
+              <strong>Farnsworth is the proprietary production system behind that cadence.</strong> It standardizes the full Reddit game
+              workflow — from reusable game systems and agent-assisted development to Devvit emulation, live preview, QA, launch, and
+              production feedback. Each game leaves behind reusable code, tests, workflows, and player learnings, so the next title starts
+              further ahead.
+            </div>
+            <div className="pitch-quote">
+              "Farnsworth makes this volume possible without scaling headcount linearly."
+            </div>
           </div>
         </div>
 
-        {/* Right column: Content cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
-          <div className="pitch-card">
-            <div className="pitch-card-title">📮 POSTS ARE GAMES</div>
-            <div className="pitch-card-body">
-              A Reddit post hosts the entire match. Open a post, the game loads. One click. No friction.
-              <br /><br />
-              <strong>What it means:</strong> Every match is a persistent container with its own URL and thread. Players can share, spectate, and comment on live games. A great match becomes a shareable moment that lands on r/all.
-            </div>
+        {/* Full-width: the four stages */}
+        <div className="pitch-card">
+          <div className="pitch-card-title">⚙️ GAME CREATION AS A REPEATABLE SYSTEM</div>
+          <div className="pitch-card-body">
+            Most studios treat every game as a new production process. Anomaly uses Farnsworth to turn game creation into a repeatable one.
           </div>
 
-          <div className="pitch-card">
-            <div className="pitch-card-title">🏀 MULTIVERSE BASKETBALL ASSOCIATION — IN ACTION</div>
-            <div style={{
-              marginTop: "12px",
-              borderRadius: "8px",
-              overflow: "hidden",
-              border: "1px solid rgba(25, 230, 196, 0.2)",
-              background: "#02060a",
-            }} className="pitch-video-half">
-              {/* Crop 20% off the left and right of the source video (640x360 -> 384x360). */}
-              <div className="pitch-video-crop" style={{
-                position: "relative",
-                width: "100%",
-                aspectRatio: "384 / 360",
-                overflow: "hidden",
-              }}>
-                <video
-                  src="assets/MBAClip.mov"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="none"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: "-33.3333%",
-                    width: "166.6667%",
-                    height: "100%",
-                    display: "block",
-                  }}
-                />
+          <div className="pitch-steps" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+            <div className="pitch-step">
+              <div className="pitch-step-title">BUILD</div>
+              <div className="pitch-step-body">
+                Reusable game primitives, persistent project knowledge, and AI-assisted implementation shorten the path from concept to playable build.
               </div>
-              <div style={{
-                padding: "8px 12px",
-                fontFamily: "var(--f-mono)",
-                fontSize: "11px",
-                letterSpacing: "0.18em",
-                color: "var(--c-left)",
-                borderTop: "1px solid rgba(25, 230, 196, 0.15)",
-                textTransform: "uppercase",
-              }}>
-                Multiverse Basketball Association
+            </div>
+            <div className="pitch-step">
+              <div className="pitch-step-title">VALIDATE</div>
+              <div className="pitch-step-body">
+                A Reddit-native emulator, multi-user simulation, live previews, and integrated QA let games be tested before launch.
+              </div>
+            </div>
+            <div className="pitch-step">
+              <div className="pitch-step-title">OPERATE</div>
+              <div className="pitch-step-body">
+                Production signals return to the same environment where the game was built, so the team can spot issues, create tasks, and iterate.
+              </div>
+            </div>
+            <div className="pitch-step">
+              <div className="pitch-step-title">COMPOUND</div>
+              <div className="pitch-step-body">
+                Every title adds reusable code, tests, workflows, and player learnings that improve the next title.
               </div>
             </div>
           </div>
 
+          <div className="pitch-note">
+            The result: Anomaly can grow launch volume without assembling a separate production team and toolchain for every game.
+          </div>
+        </div>
+
+        {/* Bottom row: the two directional notes */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", alignItems: "start" }}>
           <div className="pitch-card">
-            <div className="pitch-card-title">💬 COMMENTS = GUILD COMMS</div>
+            <div className="pitch-card-title">🤝 OUTSIDE CREATIVE CAPACITY</div>
             <div className="pitch-card-body">
-              The comment thread is where the community lives. Players trash talk, celebrate, and strategize in real time.
+              <strong>Anomaly does not need to employ every team that produces the next hit.</strong> Farnsworth turns outside creative
+              capacity into a standardized, testable, monetizable catalog.
               <br /><br />
-              <strong>Post-game:</strong> Commentary, GIFs, replays, and leaderboard updates thread together naturally. No separate discord, no fragmentation.
+              We begin with 36 internal attempts a year. Farnsworth gives us a path to hundreds of partner-powered attempts without
+              hundreds of internal employees.
             </div>
           </div>
 
           <div className="pitch-card">
-            <div className="pitch-card-title">⬆️ UPVOTES = DISCOVERY</div>
+            <div className="pitch-card-title">🧭 WHAT WE BUILD, AND WHAT WE DON'T</div>
             <div className="pitch-card-body">
-              Upvotes signal quality and drive the feed algorithm. A close match, a rare auction upset, a legendary play — these become viral posts.
-              <br /><br />
-              <strong>What we get:</strong> Free distribution. Organic marketing. The algorithm does the work.
-            </div>
-          </div>
-
-          <div className="pitch-card">
-            <div className="pitch-card-title">👥 SUBREDDITS = GUILDS</div>
-            <div className="pitch-card-body">
-              r/MultiverseBA is the tribe. Weekly tournaments, seasonal leagues, collaborative bosses.
-              <br /><br />
-              <strong>Retention:</strong> Your friends ARE your league. Reddit's tribal structure becomes progression infrastructure.
+              Anomaly only builds Farnsworth capabilities that increase launch velocity, improve qualification rates, reduce production
+              costs, or improve portfolio revenue. Nothing else gets built.
             </div>
           </div>
         </div>
@@ -1188,91 +1084,65 @@ function PitchDetails({ onAuction, onVision, onCoreLoop, onMonetization, onMarke
       <div className="pitch-header">
         <div className="pitch-title">
           <span className="pitch-title-big">ANOMALY STUDIO</span>
-          <span className="pitch-title-sub">INTERACTIVE PITCH DECK</span>
+          <span className="pitch-title-sub">THREE GAMES A MONTH · THE ANOMALY ADVANTAGE</span>
         </div>
       </div>
 
       <div className="pitch-content">
-        {/* Card 1: Vision — CLICKABLE */}
+        {/* Card 1: The Catalog — CLICKABLE */}
         <div className="pitch-card" onClick={onVision} style={{ cursor: "pointer" }}>
           <div className="pitch-card-title">⚡ VISION</div>
           <div className="pitch-card-body">
-            <strong>Reddit has quietly become a native games platform.</strong> Anomaly has the data, tooling, AI systems, and game production engine to become the first major Reddit-native games publisher.
+            <strong>Anomaly is building a revenue-bearing catalog, not betting on one hit.</strong> We launch three games per month.
+            Each qualified title receives a one-time payment and contributes recurring Reddit revenue, while the strongest games layer
+            in-app purchases on top.
             <br /><br />
-             420M monthly active users. A developer platform that runs code in posts. Built-in identity, payments, and distribution.
-            <br /><br />
-            <strong>Anomaly</strong> is building the <strong>Reddit Games Pipeline</strong> — flagship games that prove games are Reddit's killer app.
+            At 50K average DQE per title, a 36-game catalog reaches <strong>$180K MRR</strong> and a <strong>$2.16M</strong> annualized
+            platform-revenue run-rate before IAP.
           </div>
-          <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
-            CLICK TO EXPLORE →
-          </div>
+          <div className="pitch-cta">CLICK TO EXPLORE →</div>
         </div>
 
-        {/* Card 2: Core Loop — CLICKABLE */}
+        {/* Card 2: Farnsworth — CLICKABLE */}
         <div className="pitch-card" onClick={onCoreLoop} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">🎮 NEW INNOVATIVE LOOPS</div>
+          <div className="pitch-card-title">🏭 FARNSWORTH</div>
           <div className="pitch-card-body">
-            <strong>Collect, Customize, Compete, and Trade</strong> — Draft legendary pixel athletes, Build lineups around playstyles, Bid, auction, and upgrade your roster through a player-driven market
-            <br />
-            <strong>Casual Evergreen Games</strong> —  Automated engagement loops, live events, and dynamic content keep the world fresh and players coming back for more
-            <br />
-            <strong>Virality in Mind</strong> — Share simple things like Ice Cream cones in shareable Reddit post, with built-in commenting to drive community and discovery
-            
+            <strong>The proprietary production system behind the cadence.</strong> It standardizes the full Reddit game workflow — reusable
+            game systems, agent-assisted development, Devvit emulation, live preview, QA, launch, and production feedback.
+            <br /><br />
+            Each game leaves behind reusable code, tests, workflows, and player learnings, so the next title starts further ahead.
+            Farnsworth makes this volume possible without scaling headcount linearly.
           </div>
-          <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
-            CLICK TO EXPLORE →
-          </div>
+          <div className="pitch-cta">CLICK TO EXPLORE →</div>
         </div>
 
-        {/* Card 3: Monetization — CLICKABLE */}
+        {/* Card 3: Catalog Economics — CLICKABLE */}
         <div className="pitch-card" onClick={onMonetization} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">💰 MONETIZATION</div>
+          <div className="pitch-card-title">💰 CATALOG ECONOMICS</div>
           <div className="pitch-card-body">
-            
-            Reddit monetization is still early, which creates the opportunity. Anomaly will begin with proven, 
-            low-friction revenue loops: non-pay-to-win cosmetics, premium currency, seasonal passes, grants, and sponsored collaborations.
+            <strong>Multiple ways to win.</strong> $90K exit MRR if only half the titles qualify. $180K in the base scenario.
+            Up to ~$445K in upper DQE scenarios.
+            <br /><br />
+            On top of that: up to $7.5K in one-time program payments per game, IAP on the strongest titles, and breakout upside that can
+            outperform the whole base model.
           </div>
-          <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
-            CLICK TO EXPLORE →
-          </div>
+          <div className="pitch-cta">CLICK TO EXPLORE →</div>
         </div>
 
-
-        {/* Card 5: AI Difference — CLICKABLE */}
+        {/* Card 4: Living Worlds — CLICKABLE */}
         <div className="pitch-card" onClick={onLivingEconomy} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">🌐 LIVING WORLDS</div>
+          <div className="pitch-card-title">🌐 AGENTIC LIVEOPS</div>
           <div className="pitch-card-body">
-            AI agents embedded natively into the Reddit ecosystem — they post, comment, bid, and compete like real Redditors, seeding activity and keeping every community alive from day one.
+            Clearly labeled AI agents and opponents keep worlds active from day one — generating daily challenges, filling matchmaking
+            queues, and participating in in-game economies.
             <br /><br />
-            In practice, this powers a living economy: no cold start, no empty leaderboards, no churn from stale endgame. A world that feels alive.
+            Built once inside Farnsworth, then reused across the catalog: no cold start, no empty leaderboards, no stale endgame.
           </div>
-          <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
-            CLICK TO EXPLORE →
-          </div>
+          <div className="pitch-cta">CLICK TO EXPLORE →</div>
         </div>
 
-        {/* Card 6: Founder & Plan */}
-        <div className="pitch-card" onClick={onFounder} style={{ cursor: "pointer" }}>
-          <div className="pitch-card-title">👤 THE FOUNDER</div>
-          <div className="pitch-card-body">
-            <strong style={{ color: "var(--c-ink)" }}>Long Do</strong> <span style={{ color: "var(--c-ink)" }}>— solo developer, in the last 3 years, 10+ shipped titles each successfully brought in revenue $50K–$2M.</span>
-            <br /><br />
-            <span style={{ color: "var(--c-ink)" }}>A decade of shipping hits as an indie — built without teams, without publishers, against 30% app store cuts.</span>
-            <br /><br />
-            <strong style={{ color: "var(--c-ink)" }}>Two forces have just compressed the math:</strong>
-            <br /><br />
-            <span style={{ color: "var(--c-ink)" }}>
-              • AI turns a 12-month build into a 1-month ship
-              <br />
-              • Reddit removes every distribution and monetization tax that used to slow indies down
-            </span>
-          </div>
-          <div style={{ marginTop: "8px", color: "var(--c-left)", fontSize: "12px", letterSpacing: "0.1em" }}>
-            CLICK TO EXPLORE →
-          </div>
-        </div>
-
-
+        {/* The Team card and the "Three games a month" thesis card are hidden
+            from the overview. TeamPage is still reachable via Living Worlds → Next. */}
       </div>
 
       <div className="pitch-footer">
@@ -1343,7 +1213,7 @@ function PrototypeControls({ state, goto }) {
     ["pitch-hero", "Hero"],
     ["pitch-details", "Details"],
     ["pitch-vision", "Vision"],
-    ["pitch-coreloop", "Core Loop"],
+    ["pitch-coreloop", "Farnsworth"],
     ["auction", "Live Auction"],
     ["post", "Shareable Post"],
   ];
@@ -1485,7 +1355,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <VisionPage onBack={() => setState("pitch-details")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-coreloop")} nextTitle="REDDIT MECHANICS" />
+              <CatalogPage onBack={() => setState("pitch-details")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-coreloop")} nextTitle="FARNSWORTH" />
             </>
           )}
 
@@ -1514,7 +1384,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <CoreLoopPage onBack={() => setState("pitch-vision")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-monetization")} nextTitle="MONETIZATION" />
+              <FarnsworthPage onBack={() => setState("pitch-vision")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-monetization")} nextTitle="CATALOG ECONOMICS" />
             </>
           )}
 
@@ -1601,7 +1471,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <FounderPage onBack={() => setState("pitch-living-economy")} onOverview={() => setState("pitch-details")} />
+              <TeamPage onBack={() => setState("pitch-living-economy")} onOverview={() => setState("pitch-details")} />
             </>
           )}
 
@@ -1630,7 +1500,8 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <AIDifferencePage onBack={() => setState("pitch-monetization")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-founder")} nextTitle="THE FOUNDER" />
+              {/* Last section — The Team is hidden, so there is no NEXT from here. */}
+              <LivingWorldsPage onBack={() => setState("pitch-monetization")} onOverview={() => setState("pitch-details")} />
             </>
           )}
 
@@ -1688,7 +1559,7 @@ function PitchApp() {
                 <div className="slash" style={{ left: 160, opacity: 0.25 }}></div>
               </div>
 
-              <MonetizationPage onBack={() => setState("pitch-coreloop")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-living-economy")} nextTitle="LIVING WORLDS" />
+              <EconomicsPage onBack={() => setState("pitch-coreloop")} onOverview={() => setState("pitch-details")} onNext={() => setState("pitch-living-economy")} nextTitle="AGENTIC LIVEOPS" />
             </>
           )}
 
