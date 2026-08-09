@@ -609,8 +609,7 @@ function LivingWorldsPage({ onBack, onOverview, onNext, nextTitle }) {
           <div className="pitch-card-title">🤖 A SCALABLE GAMING OPS SYSTEM</div>
           <div className="pitch-card-body">
             <strong>Agentic systems built into Farnsworth, plus analytics add-ons, create a scalable gaming ops system</strong> —
-            generating daily challenges, filling matchmaking queues, participating in in-game auctions, and creating replayable content
-            loops.
+            generating daily challenges and creating replayable content loops.
             <br /><br />
             These are Farnsworth systems, not per-game features: built once, hardened once, then reused across the catalog. A game world
             that never feels empty is a launch requirement, not a nice-to-have.
@@ -1133,10 +1132,9 @@ function PitchDetails({ onAuction, onVision, onCoreLoop, onMonetization, onMarke
         <div className="pitch-card" onClick={onLivingEconomy} style={{ cursor: "pointer" }}>
           <div className="pitch-card-title">🌐 AGENTIC LIVEOPS</div>
           <div className="pitch-card-body">
-            Clearly labeled AI agents and opponents keep worlds active from day one — generating daily challenges, filling matchmaking
-            queues, and participating in in-game economies.
+            AI agents keep worlds active from day one — generating daily challenges, creating in-game economies.
             <br /><br />
-            Built once inside Farnsworth, then reused across the catalog: no cold start, no empty leaderboards, no stale endgame.
+            Built once inside Farnsworth, then reused across the catalog.
           </div>
           <div className="pitch-cta">CLICK TO EXPLORE →</div>
         </div>
